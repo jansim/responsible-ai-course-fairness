@@ -26,6 +26,7 @@ format:
         </script>
 filters:
   - assets/pipeline.lua
+  - assets/image-groups.lua
 # Layout notes
 # - Slides use the 1280 x 720 grid of the original PowerPoint; `.abs`, `.stage`
 #   and `.overlay` elements are positioned in those pixel coordinates.
