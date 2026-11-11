@@ -32,6 +32,7 @@ book:
     - 0.1-intro.qmd
     - 1.0-foundations-of-fairness.qmd
     - 2.0-research-findings.qmd
+    - references.qmd
 
 bibliography: references.bib
 
