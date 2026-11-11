@@ -60,15 +60,15 @@ Getting a good and fair model needs this pipeline
 ## The Machine Learning Pipeline
 
 - Several high-level frameworks exist for "*Data Science Life Cycle*"
-  - e.g., CRISP-DM [(Chapman et al., 2000)]{.cite}, PCS Framework [(Yu and Kumbier, 2020; Yu and Barter, 2024)]{.cite}
+  - e.g., CRISP-DM [[@chapman2000crispdm]]{.cite}, PCS Framework [[@yu2020veridical; @yu2024veridical]]{.cite}
 
 . . .
 
 - No comprehensive frameworks for the "ML Pipeline"
   - Clearest specifications often in AutoML
-  - Technical implementations of pipelines in libraries [(Pedragosa et al., 2011; Binder et al. 2021)]{.cite}
-  - High variety of ML pipelines [(Xin et al., 2021)]{.cite}
-  - At least partially dataset-specific [(Zöller and Huber, 2021)]{.cite}
+  - Technical implementations of pipelines in libraries [[@pedregosa2011scikitlearn; @binder2021mlr3pipelines]]{.cite}
+  - High variety of ML pipelines [[@xin2021production]]{.cite}
+  - At least partially dataset-specific [[@zoller2021benchmark]]{.cite}
 
 ## The Machine Learning Pipeline {auto-animate=true}
 
@@ -82,7 +82,7 @@ Getting a good and fair model needs this pipeline
 ::: {.pipeline .large icons=true}
 :::
 
-[Simplified illustration, drawing on [Zöller and Huber (2021)]{.cite} and [Simson et al. (2024)]{.cite}]{.footer-note}
+[Simplified illustration, drawing on [@zoller2021benchmark]{.cite} and [@simson2024one]{.cite}]{.footer-note}
 
 ::: {.notes}
 There's more, both in depth i.e. you could zoom in and outside of this e.g. data sourcing and deployment.
@@ -93,7 +93,7 @@ There's more, both in depth i.e. you could zoom in and outside of this e.g. data
 ::: {.pipeline .large icons=true}
 :::
 
-[Simplified illustration, drawing on [Zöller and Huber (2021)]{.cite} and [Simson et al. (2024)]{.cite}]{.footer-note}
+[Simplified illustration, drawing on [@zoller2021benchmark]{.cite} and [@simson2024one]{.cite}]{.footer-note}
 
 ::: {.notes}
 Should we re-evaluate this pipeline and if so – how?
@@ -136,7 +136,7 @@ Should we re-evaluate this pipeline and if so – how?
 
 ## How are Datasets used in FairML?
 
-- Build on systematic review of literature [(Fabris et al., 2022)]{.cite}
+- Build on systematic review of literature [[@fabris2022algorithmic]]{.cite}
   - Papers at major ML and FairML conferences matching fairness related keywords
   - Focus on fair classification and tabular datasets
 
@@ -206,7 +206,7 @@ Literature, number of experiments (with sufficient information)
 - Populations are frequently omitted in preprocessing
 
 ::: {.fragment fragment-index=1}
-- Annotated processing of *race* for *N* = 69 articles using COMPAS [(Angwin et al., 2016)]{.cite}
+- Annotated processing of *race* for *N* = 69 articles using COMPAS [[@angwin2016machine]]{.cite}
 :::
 
 ::: {.fragment fragment-index=2}
@@ -250,7 +250,7 @@ None keep Asians / native Americas as distinct groups around
 ## Lazy Practice #3.2: **Opaque Preprocessing** {auto-animate=true}
 
 ::: {.narrow style="--w:450px"}
-- Annotated usage for *N* = 9 articles using Bank Marketing [(Moro et al., 2012)]{.cite} dataset
+- Annotated usage for *N* = 9 articles using Bank Marketing [[@moro2014data]]{.cite} dataset
 :::
 
 ::: {.stage}
@@ -260,7 +260,7 @@ None keep Asians / native Americas as distinct groups around
 ## Lazy Practice #3.2: **Opaque Preprocessing** {auto-animate=true}
 
 ::: {.narrow style="--w:450px"}
-- Annotated usage for *N* = 9 articles using Bank Marketing [(Moro et al., 2012)]{.cite} dataset
+- Annotated usage for *N* = 9 articles using Bank Marketing [[@moro2014data]]{.cite} dataset
 :::
 
 ::: {.stage}
@@ -270,7 +270,7 @@ None keep Asians / native Americas as distinct groups around
 ## Lazy Practice #3.2: **Opaque Preprocessing** {auto-animate=true}
 
 ::: {.narrow style="--w:450px"}
-- Annotated usage for *N* = 9 articles using Bank Marketing [(Moro et al., 2012)]{.cite} dataset
+- Annotated usage for *N* = 9 articles using Bank Marketing [[@moro2014data]]{.cite} dataset
 :::
 
 ::: {.stage}
@@ -280,7 +280,7 @@ None keep Asians / native Americas as distinct groups around
 ## Lazy Practice #3.2: **Opaque Preprocessing** {auto-animate=true}
 
 ::: {.narrow style="--w:450px"}
-- Annotated usage for *N* = 9 articles using Bank Marketing [(Moro et al., 2012)]{.cite} dataset
+- Annotated usage for *N* = 9 articles using Bank Marketing [[@moro2014data]]{.cite} dataset
 - *N* = 7 different variants of usage, all using the *"same"* dataset
   - Variants affect model choice / fairness metrics
   - Lower bound of variation (only three decisions)
@@ -346,7 +346,7 @@ These are hard (!) and some may require also changes on the reviewer side, but w
 ::: {.pipeline .large icons=true forks=show gap=66}
 :::
 
-[Garden of forking paths [(Gelman and Loken, 2014)]{.cite}]{.footer-note}
+[Garden of forking paths [[@gelman2014statistical]]{.cite}]{.footer-note}
 
 ## In the End, We Create **Only One**<br>Of *Many* Potential Models
 
@@ -357,7 +357,7 @@ These are hard (!) and some may require also changes on the reviewer side, but w
 
 ::: {.fragment}
 - *Multiverse Analysis:* Traverse and explore universes in the multiverse
-  - From Psychology [(Steegen et. al, 2016)]{.cite}
+  - From Psychology [[@steegen2016increasing]]{.cite}
 :::
 
 ::: {.fragment}
@@ -375,7 +375,7 @@ These are hard (!) and some may require also changes on the reviewer side, but w
 
 **Predict public health care coverage**
 
-- ACSPublicCoverage in folktables [(Ding et. al, 2021)]{.cite}
+- ACSPublicCoverage in folktables [[@ding2021retiring]]{.cite}
   - Based on US Census data for state of California
 
 ![](assets/slide-27-0.png){.absolute left=101 top=362 width=1179 fig-alt="ACSPublicCoverage sample rows"}
@@ -410,7 +410,7 @@ e.g. using a different model type such
 [$S$: prot. attr.<br>$\hat{Y}$: prediction = decision<br>$Y$: ground truth]{.absolute .small .legend left=990 top=28}
 
 - **Separation:** Error rates should be equal across all groups $g$ of $S$
-  - aka: Equalized odds, disparate mistreatment, error rate balance and more [(Pessach and Shmueli, 2022)]{.cite}
+  - aka: Equalized odds, disparate mistreatment, error rate balance and more [[@pessach2022review]]{.cite}
 
 $$
 \begin{aligned}
@@ -421,7 +421,7 @@ $$
 
 . . .
 
-- **Equalized Odds Difference:** Maximum difference in *TPR* and *FPR* between different groups $g$ of $S$ [(Weerts et al., 2023)]{.cite}
+- **Equalized Odds Difference:** Maximum difference in *TPR* and *FPR* between different groups $g$ of $S$ [[@weerts2023fairlearn]]{.cite}
   - Lower is better; ranges from 0 to 1
 
 ## There is a Lot of Variation in the *Multiverse*
@@ -432,7 +432,7 @@ $$
 
 ## How Can we Attribute this Variation?
 
-- We can use a functional analysis of variance (FANOVA) to decompose the variance [(Hooker, 2007)]{.cite}
+- We can use a functional analysis of variance (FANOVA) to decompose the variance [[@hooker2007generalized]]{.cite}
 - Allows identifying the most important decisions …and their interactions → to examine them in detail
 
 ::: {.pipeline nodes="k b b b b k" sizes="1 1.4 1.85 .77 1.45 1.65"}
@@ -707,4 +707,9 @@ We saw effective techniques of how the machine learning pipeline can be re-evalu
 ## **Thank you!** {.section-slide}
 
 ::: {.pipeline .bare y=514}
+:::
+
+## References {.scrollable .references-slide}
+
+::: {#refs}
 :::
