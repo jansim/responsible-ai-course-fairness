@@ -49,6 +49,10 @@ jobs:
       - name: Render book
         uses: quarto-dev/quarto-actions/render@v2
 
+      # after the book: rendering the book cleans _book/
+      - name: Render slides
+        run: quarto render --profile slides --to revealjs
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:

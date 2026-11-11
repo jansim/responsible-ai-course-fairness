@@ -26,7 +26,7 @@ book:
         - ref: lmu-stat
         - ref: mcml
         - ref: uni-mannheim
-  date: "11/11/2026"
+  date: "2026-11-20"
   chapters:
     - index.qmd
     - 0.1-intro.qmd

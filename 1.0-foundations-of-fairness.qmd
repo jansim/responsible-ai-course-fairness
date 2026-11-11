@@ -1,15 +1,18 @@
 ---
-title: "Algorithmic Fairness"
+title: "Foundations of Algorithmic Fairness"
 author: "Christoph Kern"
----
-
-<!--
 format:
   revealjs:
     width: 1920
     height: 1200
     scrollable: true
--->
+---
+
+::: {.content-visible unless-format="revealjs"}
+::: {.callout-tip appearance="simple"}
+This chapter is also available as [slides](slides/1.0-foundations-of-fairness.html){target="_blank"}.
+:::
+:::
 
 
 - Automated Decision-Making (ADM)

@@ -1,5 +1,11 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+These are the materials for the **Algorithmic Fairness** session of the Responsible AI Course, held on 20 November 2026.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Machine learning systems increasingly prepare or make decisions about people, from risk assessments in criminal justice to the allocation of public services. This session looks at what it means for such systems to be *fair*, how unfairness can be measured, and where in the machine learning pipeline it arises.
+
+The materials are organised as a book. Each session is a chapter, and every chapter is also available as a slide deck:
+
+- [Introduction](0.1-intro.qmd): overview and agenda
+- [Foundations of Algorithmic Fairness](1.0-foundations-of-fairness.qmd): automated decision-making, bias in data, group, individual and multi-group fairness, plus a hands-on lab in R
+- [Research Findings and How They May Inform Practice](2.0-research-findings.qmd): recent research re-examining the machine learning pipeline

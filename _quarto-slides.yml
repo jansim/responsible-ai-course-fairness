@@ -1,0 +1,23 @@
+# Profile for rendering the chapters as reveal.js slide decks.
+#
+#   quarto render                                   # 1. the book  -> _book/
+#   quarto render --profile slides --to revealjs    # 2. the decks -> _book/slides/
+#
+# Render the book first: it cleans _book/ and would remove the slides otherwise.
+# Per-deck reveal.js options live in each chapter's front matter.
+
+project:
+  type: default
+  output-dir: _book/slides
+  render:
+    - 1.0-foundations-of-fairness.qmd
+    - 2.0-research-findings-slides.qmd
+  resources:
+    # referenced from raw HTML (pipeline.lua, <video>), so not auto-detected
+    - assets/icons/
+    - assets/*.mp4
+
+format:
+  revealjs:
+    slide-number: true
+    hash: true
