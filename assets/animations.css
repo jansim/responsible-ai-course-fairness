@@ -1,0 +1,11 @@
+/* Native reveal.js fragments and auto-animation; no hard-coded theme colors. */
+.reveal .fragment.appear { transition: none; }
+.reveal .fragment > ul { margin-top: 0; margin-bottom: 0; }
+.reveal .morph-scene { position: relative; overflow: hidden; margin: 0 auto; max-width: 100%; }
+.reveal .morph-scene img { position: absolute; max-width: none; max-height: none; margin: 0; object-fit: fill; }
+.reveal .annotated-figure { position: relative; width: fit-content; max-width: 100%; margin: 0 auto; }
+.reveal .annotation-overlay { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.reveal .annotated-figure p { margin: 0 !important; }
+.reveal [data-id$="icon"] { display: inline-block; }
+.reveal .pipeline th { position: relative; }
+.reveal .pipeline-fork { position: absolute; left: 50%; top: calc(100% - 20px); width: 100%; height: 40px; overflow: visible; }

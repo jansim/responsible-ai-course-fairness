@@ -1,0 +1,12 @@
+<script>
+// Extend native auto-animation to interpolate the original image crops.
+// Respect reduced-motion preferences while preserving the original click sequence.
+document.addEventListener('DOMContentLoaded', () => {
+  Reveal.configure({autoAnimateStyles: [...Reveal.getConfig().autoAnimateStyles, 'clip-path']});
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[data-auto-animate]').forEach(slide => {
+      slide.dataset.autoAnimateDuration = '0';
+    });
+  }
+});
+</script>
