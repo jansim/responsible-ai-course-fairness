@@ -65,7 +65,7 @@ $muted: #7f7f7f;
 .reveal .c-k { background-color: #000; }
 .reveal .c-r { background-color: $red; }
 .reveal .c-b { background-color: $blue; }
-.reveal .c-p { background: linear-gradient(90deg, $red 50%, $blue 50%); }
+.reveal .c-p { background: linear-gradient(90deg, $red 20%, $blue 80%); }
 .reveal .pl-label { width: 220px; text-align: center; line-height: 1.15; color: #000; }
 .reveal .pipeline-compact .pl-label { color: $muted; }
 .reveal .pl-fork { object-fit: cover; object-position: left center; }
