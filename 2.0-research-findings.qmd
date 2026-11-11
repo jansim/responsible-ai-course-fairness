@@ -2,36 +2,49 @@
 pagetitle: "Research Findings and How They May Inform Practice"
 format:
   revealjs:
-    theme: simple
-    css: [assets/styles.css, assets/animations.css]
+    theme: [default, assets/theme.scss]
     width: 1280
     height: 720
-    margin: 0.06
+    margin: 0
     center: false
+    auto-stretch: false
     slide-number: true
     transition: none
-    auto-animate: true
-    include-after-body: assets/animations.html
+    auto-animate-duration: 0.8
+    auto-animate-easing: ease-in-out
     navigation-mode: linear
-    controls: true
-    progress: true
     hash: true
-    history: true
     html-math-method: mathml
     code-copy: false
+    include-after-body:
+      # let auto-animate also interpolate the progressive figure crops
+      text: |
+        <script>
+        window.addEventListener('load', () => Reveal.configure({
+          autoAnimateStyles: [...Reveal.getConfig().autoAnimateStyles, 'clip-path']
+        }));
+        </script>
+filters:
+  - assets/pipeline.lua
+# Layout notes
+# - Slides use the 1280 x 720 grid of the original PowerPoint; `.abs`, `.stage`
+#   and `.overlay` elements are positioned in those pixel coordinates.
+# - `::: {.pipeline}` is expanded by assets/pipeline.lua (see options there).
+# - Consecutive `auto-animate=true` slides morph elements sharing a `data-id`.
 ---
 
-## Research Findings and How They May Inform Practice {#slide-01 .opening-slide}
+## **Research Findings** and How They May Inform **Practice** {#slide-01 .opening}
 
-<!-- Original PowerPoint slide 1 -->
+![](assets/slide-01-3.png){.abs style="left:31px;top:20px;width:264px" fig-alt="LMU München"}
 
-![](assets/slide-01-3.png){height=95 fig-alt="LMU München"}
+[Jan Simson]{.author}
 
-## Intro — The Machine Learning Pipeline {#slide-02 .section-slide}
+[20.01.2026]{.date}
 
-<!-- Original PowerPoint slide 2 -->
+::: {.pipeline .bare}
+:::
 
-
+## **Intro —**<br>The Machine Learning Pipeline {#slide-02 .section-slide}
 
 ::: {.notes}
 Getting a good and fair model needs this pipeline
@@ -39,347 +52,262 @@ Getting a good and fair model needs this pipeline
 
 ## The Machine Learning Pipeline {#slide-03}
 
-<!-- Original PowerPoint slide 3 -->
+- Several high-level frameworks exist for "*Data Science Life Cycle*"
+  - e.g., CRISP-DM [(Chapman et al., 2000)]{.cite}, PCS Framework [(Yu and Kumbier, 2020; Yu and Barter, 2024)]{.cite}
 
-- Several high-level frameworks exist for “*Data Science Life Cycle*”
-  - e.g., CRISP-DM (Chapman et al., 2000), PCS Framework (Yu and Kumbier, 2020; Yu and Barter, 2024)
+. . .
 
-::: {.fragment .appear data-fragment-index="0"}
-- No comprehensive frameworks for the “ML Pipeline”
+- No comprehensive frameworks for the "ML Pipeline"
   - Clearest specifications often in AutoML
-  - Technical implementations of pipelines in libraries (Pedragosa et al., 2011; Binder et al. 2021)
-  - High variety of ML pipelines (Xin et al., 2021)
-  - At least partially dataset-specific (Zöller and Huber, 2021)
+  - Technical implementations of pipelines in libraries [(Pedragosa et al., 2011; Binder et al. 2021)]{.cite}
+  - High variety of ML pipelines [(Xin et al., 2021)]{.cite}
+  - At least partially dataset-specific [(Zöller and Huber, 2021)]{.cite}
+
+## The Machine Learning Pipeline {#slide-04 auto-animate=true}
+
+::: {.pipeline .simple}
 :::
 
-
-## The Machine Learning Pipeline {#slide-04 .pipeline-slide auto-animate=true auto-animate-id="pipeline-intro" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
-
-<!-- Original PowerPoint slide 4 -->
-
-::: {.simple-pipeline}
-<span data-id="data-icon">🗄️</span> → <span data-id="model-icon">🤖</span> → <span data-id="decision-icon">✅️ / ❌️</span>
+::: {.stage .fragment}
+[Not quite that simple]{.tape}
 :::
 
-**Not quite that simple**
+## The Machine Learning Pipeline {#slide-05 auto-animate=true}
 
-## The Machine Learning Pipeline {#slide-05 .pipeline-slide auto-animate=true auto-animate-id="pipeline-intro" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
-
-<!-- Original PowerPoint slide 5 -->
-
-::: {data-id="pipeline" .pipeline .large}
-
-| <span data-id="data-icon">🗄️</span> |  | <span data-id="model-icon">🤖</span> |  | <span data-id="decision-icon">✅️ / ❌️</span> |  |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | (Pre-)Processing | Model | Predictions | Decisions | Evaluation |
-
+::: {.pipeline .large icons=true}
 :::
 
-::: {.small}
-Simplified illustration, drawing on Zöller and Huber (2021) and Simson et al. (2024)
-:::
+[Simplified illustration, drawing on [Zöller and Huber (2021)]{.cite} and [Simson et al. (2024)]{.cite}]{.small .abs style="left:48px;top:662px"}
 
 ::: {.notes}
-There’s more, both in depth i.e. you could zoom in and outside of this e.g. data sourcing and deployment.
+There's more, both in depth i.e. you could zoom in and outside of this e.g. data sourcing and deployment.
 :::
 
-## Should we Re-Evaluate this Pipeline? {#slide-06 .pipeline-slide}
+## Should we Re-Evaluate this Pipeline? {#slide-06 auto-animate=true}
 
-<!-- Original PowerPoint slide 6 -->
-
-::: {.pipeline .large}
-
-| 🗄️ |  | 🤖 |  | ✅️ / ❌️ |  |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | (Pre-)Processing | Model | Predictions | Decisions | Evaluation |
-
+::: {.pipeline .large icons=true}
 :::
 
-::: {.small}
-Simplified illustration, drawing on Zöller and Huber (2021) and Simson et al. (2024)
-:::
+[Simplified illustration, drawing on [Zöller and Huber (2021)]{.cite} and [Simson et al. (2024)]{.cite}]{.small .abs style="left:48px;top:662px"}
 
 ::: {.notes}
 Should we re-evaluate this pipeline and if so – how?
 :::
 
-## Contributions {#slide-07 auto-animate=true auto-animate-id="contribution" auto-animate-duration="0.5" auto-animate-easing="ease-in-out"}
+## Contributions {#slide-07 auto-animate=true}
 
-<!-- Original PowerPoint slide 7 -->
-
-:::: {.columns}
-::: {.column width="52%"}
+::: {.contrib-list}
 - Lazy Data Practices
 - Multiverse Analysis for Algorithmic Fairness
 - Participatory Multiverse
 :::
-::: {.column width="48%"}
-![](assets/slide-07-14.png){height=200 fig-alt="Research paper cover"} ![](assets/slide-07-15.png){height=200 fig-alt="Research paper cover"} ![](assets/slide-07-16.png){height=200 fig-alt="Research paper cover"}
-:::
-::::
 
-::: {data-id="pipeline" .pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| **Data** | **(Pre-)Processing** | **Model** | **Predictions** | **Decisions** | **Evaluation** |
-
+::: {.papers}
+![](assets/slide-07-14.png){style="left:922px;top:124px" fig-alt="Paper: Lazy Data Practices Harm Fairness Research"}
+![](assets/slide-07-15.png){style="left:957px;top:163px" fig-alt="Paper: One Model Many Scores"}
+![](assets/slide-07-16.png){style="left:1008px;top:209px" fig-alt="Paper: Participatory Multiverse"}
 :::
 
-## Contribution — Lazy Data Practices Harm Fairness Research {#slide-08 .contribution auto-animate=true auto-animate-id="contribution" auto-animate-duration="0.5" auto-animate-easing="ease-in-out"}
+::: {.pipeline nodes="r p b b b b"}
+:::
 
-<!-- Original PowerPoint slide 8 -->
+## **Contribution —**<br>Lazy Data Practices Harm Fairness Research {#slide-08 .contribution auto-animate=true}
 
-![](assets/slide-08-5.png){height=65 fig-alt="Coauthor portrait"} ![](assets/slide-08-6.png){height=65 fig-alt="Coauthor portrait"} ![](assets/slide-08-4.png){height=65 fig-alt="Conference logo"}
+::: {.faces}
+![](assets/slide-08-5.png){style="left:94px;top:215px" fig-alt="Coauthor portrait"}
+![](assets/slide-08-6.png){style="left:217px;top:215px" fig-alt="Coauthor portrait"}
+:::
 
-::: {.small}
+![](assets/slide-08-4.png){.abs style="left:1048px;top:67px;width:174px" fig-alt="FAccT logo"}
+
+::: {.byline}
 **Jan Simson**, Alessandro Fabris, Christoph Kern
 
-Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’24 https://doi.org/10.1145/3630106.3658931
+[Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT '24<br>https://doi.org/10.1145/3630106.3658931]{.venue}
 :::
 
-::: {data-id="pipeline" .pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| **Data** | **(Pre-)Processing** | Model | Predictions | Decisions | Evaluation |
-
+::: {.pipeline .compact nodes="r r k k k k"}
 :::
 
 ## How are Datasets used in FairML? {#slide-09}
 
-<!-- Original PowerPoint slide 9 -->
-
-- Build on systematic review of literature (Fabris et al., 2022)
+- Build on systematic review of literature [(Fabris et al., 2022)]{.cite}
   - Papers at major ML and FairML conferences matching fairness related keywords
   - Focus on fair classification and tabular datasets
 
-::: {.fragment .appear data-fragment-index="0"}
-- **N = 142 publications**    //    **N = 280 experiments**
+. . .
+
+::: {style="margin: 0 0 .7em 1.4em; font-size: 1.05em"}
+***N* = 142 publications**   //   ***N* = 280 experiments**
 :::
 
+. . .
 
-::: {.fragment .appear data-fragment-index="1"}
 - Annotate how datasets are *used*
   - Protected Attributes, Target, Features
   - Processing
   - Enough Information?
-:::
 
-
-## Lazy Practice #1: Neglected Identities {#slide-10}
-
-<!-- Original PowerPoint slide 10 -->
+## Lazy Practice #1: **Neglected Identities** {#slide-10}
 
 - Noticed many publications focusing on the same narrow set of protected / sensitive attributes
 
-::: {.fragment .appear data-fragment-index="0"}
+. . .
+
 - Compare with a list of protected attributes (*non-exhaustive*)
-  - From human rights treaties & anti-discrimination laws: UN Charter, African Charter, Arab Charter, ASEAN Declaration, European Charter, American Declaration, US Fair Lending, EU Fair Hiring
+  - From human rights treaties & anti-discrimination laws:<br>[UN Charter, African Charter, Arab Charter, ASEAN Declaration, European Charter, American Declaration, US Fair Lending, EU Fair Hiring]{.cite}
+
+## Protected Attributes in Different Legislations {#slide-11 .side-title}
+
+![](assets/slide-11-0.png){.abs style="left:332px;top:30px;width:857px" fig-alt="Protected attributes across human-rights treaties and anti-discrimination laws"}
+
+[✔️: Literal phrasing matches row header, raw text otherwise]{.abs .small style="left:49px;top:330px;width:260px"}
+
+## Lazy Practice #1<br>**Neglected Identities** {#slide-12 .corner-title auto-animate=true}
+
+::: {.stage}
+![](assets/protected-attributes-full.png){data-id="attr-chart" style="left:147px;top:8px;width:990px;clip-path:inset(6.29% 41.822% 11.831% 41.466%)" fig-alt="Protected attributes: labels only"}
+[Protected Attribute]{.lbl .small data-id="attr-head" style="left:553px;top:26px;width:174px"}
 :::
-
-
-## Protected Attributes in Different Legislations {#slide-11}
-
-<!-- Original PowerPoint slide 11 -->
-
-![](assets/slide-11-0.png){height=510 fig-alt="Protected attributes across human-rights treaties and anti-discrimination laws"}
-
-::: {.small}
-✔️: Literal phrasing matches row header, raw text otherwise
-:::
-
-## Lazy Practice #1 Neglected Identities {#slide-12 auto-animate=true auto-animate-id="attributes" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
-
-<!-- Original PowerPoint slide 12 -->
-
-::: {.small}
-Protected Attribute
-:::
-
-<div class="morph-scene" style="width:917px;height:474px"><img data-id="attribute-chart" src="assets/protected-attributes-full.png" style="left:100.076px;top:-36.249px;width:721.750px;height:580.594px;clip-path:inset(6.29000% 41.82200% 11.83100% 41.46600%);" alt="Original figure, progressive view"></div>
 
 ::: {.notes}
 21 attributes
+
 Race and religion across all of them
 :::
 
-## Lazy Practice #1 Neglected Identities {#slide-13 auto-animate=true auto-animate-id="attributes" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
+## Lazy Practice #1<br>**Neglected Identities** {#slide-13 .corner-title auto-animate=true}
 
-<!-- Original PowerPoint slide 13 -->
-
-::: {.small}
-Protected Attribute · Availability (in Datasets), N = 36
+::: {.stage}
+![](assets/protected-attributes-full.png){data-id="attr-chart" style="left:147px;top:8px;width:990px;clip-path:inset(6.289% 41.822% 12.223% 0.682%)" fig-alt="Protected attributes: availability in datasets"}
+[Protected Attribute]{.lbl .small data-id="attr-head" style="left:553px;top:26px;width:174px"}
+[**Availability**<br>(in Datasets)<br>*N* = 36]{.lbl data-id="attr-avail" style="left:32px;top:317px;width:225px"}
 :::
 
-<div class="morph-scene" style="width:917px;height:474px"><img data-id="attribute-chart" src="assets/protected-attributes-full.png" style="left:100.078px;top:-36.243px;width:721.748px;height:580.591px;clip-path:inset(6.28900% 41.82200% 12.22300% 0.68200%);" alt="Original figure, progressive view"></div>
+## Lazy Practice #1<br>**Neglected Identities** {#slide-14 .corner-title auto-animate=true}
 
-## Lazy Practice #1 Neglected Identities {#slide-14 auto-animate=true auto-animate-id="attributes" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
-
-<!-- Original PowerPoint slide 14 -->
-
-::: {.small}
-Protected Attribute · Availability (in Datasets), N = 36 · Usage (in Literature), N = 233
+::: {.stage}
+![](assets/protected-attributes-full.png){data-id="attr-chart" style="left:147px;top:8px;width:990px;clip-path:inset(6.289% 2.03% 12.223% 0.683%)" fig-alt="Protected attributes: availability in datasets and usage in literature"}
+[Protected Attribute]{.lbl .small data-id="attr-head" style="left:553px;top:26px;width:174px"}
+[**Availability**<br>(in Datasets)<br>*N* = 36]{.lbl .muted data-id="attr-avail" style="left:32px;top:317px;width:225px"}
+[**Usage**<br>(in Literature)<br>*N* = 233]{.lbl data-id="attr-usage" style="left:1014px;top:317px;width:235px"}
 :::
-
-<div class="morph-scene" style="width:917px;height:474px"><img data-id="attribute-chart" src="assets/protected-attributes-full.png" style="left:100.070px;top:-36.243px;width:721.748px;height:580.591px;clip-path:inset(6.28900% 2.03000% 12.22300% 0.68300%);" alt="Original figure, progressive view"></div>
 
 ::: {.notes}
 Literature, number of experiments (with sufficient information)
 :::
 
-## Lazy Practice #2: Omitted Populations {#slide-15}
+## Lazy Practice #2: **Omitted Populations** {#slide-15}
 
-<!-- Original PowerPoint slide 15 -->
-
-:::: {.columns}
-::: {.column width="44%"}
+::: {.narrow style="--w:470px"}
 - Populations are frequently omitted in preprocessing
 
-::: {.fragment .appear data-fragment-index="0"}
-- Annotated processing of *race* for *N* = 69 articles using COMPAS (Angwin et al., 2016)
+::: {.fragment fragment-index=1}
+- Annotated processing of *race* for *N* = 69 articles using COMPAS [(Angwin et al., 2016)]{.cite}
 :::
 
-
-::: {.fragment .appear data-fragment-index="1"}
+::: {.fragment fragment-index=2}
 - Most publications (**89.8%**) reduced the data to just two groups
 :::
 
-
-::: {.fragment .appear data-fragment-index="2"}
+::: {.fragment fragment-index=3}
 - **None** of the strategies keep Asians or Native Americans as distinct groups
 :::
-
-:::
-::: {.column width="56%"}
-::: {.fragment .appear data-fragment-index="1"}
-::: {.small}
-Handling of protected groups
-:::
 :::
 
-
-::: {.fragment .appear data-fragment-index="1"}
-![](assets/slide-15-1.png){height=460 fig-alt="Handling of protected groups in COMPAS articles"}
+::: {.fragment fragment-index=2}
+![](assets/slide-15-1.png){.abs style="left:555px;top:171px;width:717px" fig-alt="Handling of protected groups in COMPAS articles"}
+[**Handling of<br>protected groups**]{.abs .small style="left:1097px;top:129px"}
 :::
-
-:::
-::::
 
 ::: {.notes}
 Guide: filter (blue), aggregate (red)
+
 90% (black borders) retain only TWO GROUPS
+
 None keep Asians / native Americas as distinct groups around
 :::
 
-## Lazy Practice #3.1: Opaque Preprocessing {#slide-16}
+## Lazy Practice #3.1: **Opaque Preprocessing** {#slide-16}
 
-<!-- Original PowerPoint slide 16 -->
-
-:::: {.columns}
-::: {.column width="43%"}
+::: {.narrow style="--w:480px"}
 - Many articles do not provide enough information to reconstruct dataset usage
 
-::: {.fragment .appear data-fragment-index="0"}
+::: {.fragment fragment-index=1}
 - Even fewer have source code of analyses available (39%)
 :::
-
-:::
-::: {.column width="57%"}
-![](assets/slide-16-3.png){height=255 fig-alt="Enough information to reconstruct usage"}
-
-::: {.fragment .appear data-fragment-index="0"}
-![](assets/slide-16-0.png){height=135 fig-alt="Availability of source code"}
 :::
 
+![](assets/slide-16-3.png){.abs style="left:605px;top:177px;width:584px" fig-alt="Enough information to reconstruct usage"}
+
+::: {.fragment fragment-index=1}
+![](assets/slide-16-0.png){.abs style="left:605px;top:435px;width:584px" fig-alt="Availability of source code"}
 :::
-::::
 
-## Lazy Practice #3.2: Opaque Preprocessing {#slide-17 auto-animate=true auto-animate-id="bank" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
+## Lazy Practice #3.2: **Opaque Preprocessing** {#slide-17 auto-animate=true}
 
-<!-- Original PowerPoint slide 17 -->
-
-:::: {.columns}
-::: {.column width="38%"}
-- Annotated usage for *N* = 9 articles using Bank Marketing (Moro et al., 2012) dataset
+::: {.narrow style="--w:450px"}
+- Annotated usage for *N* = 9 articles using Bank Marketing [(Moro et al., 2012)]{.cite} dataset
 :::
-::: {.column width="62%"}
-<div class="morph-scene" style="width:614px;height:458px"><img data-id="bank-chart" src="assets/bank-marketing-full.png" style="left:-0.420px;top:-0.260px;width:615.087px;height:457.619px;clip-path:inset(0.00000% 91.25200% 0.00000% 0.00000%);" alt="Original figure, progressive view"></div>
+
+::: {.stage}
+![](assets/bank-marketing-full.png){data-id="bank-chart" style="left:538px;top:157px;width:695px;clip-path:inset(0 91.252% 0 0)" fig-alt="Bank Marketing dataset"}
 :::
-::::
 
-## Lazy Practice #3.2: Opaque Preprocessing {#slide-18 auto-animate=true auto-animate-id="bank" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
+## Lazy Practice #3.2: **Opaque Preprocessing** {#slide-18 auto-animate=true}
 
-<!-- Original PowerPoint slide 18 -->
-
-:::: {.columns}
-::: {.column width="38%"}
-- Annotated usage for *N* = 9 articles using Bank Marketing (Moro et al., 2012) dataset
+::: {.narrow style="--w:450px"}
+- Annotated usage for *N* = 9 articles using Bank Marketing [(Moro et al., 2012)]{.cite} dataset
 :::
-::: {.column width="62%"}
-<div class="morph-scene" style="width:614px;height:458px"><img data-id="bank-chart" src="assets/bank-marketing-full.png" style="left:-0.414px;top:-0.260px;width:615.057px;height:457.619px;clip-path:inset(0.00000% 57.36100% 0.00000% -0.00100%);" alt="Original figure, progressive view"></div>
+
+::: {.stage}
+![](assets/bank-marketing-full.png){data-id="bank-chart" style="left:538px;top:157px;width:695px;clip-path:inset(0 57.361% 0 0)" fig-alt="Bank Marketing dataset versions"}
 :::
-::::
 
-## Lazy Practice #3.2: Opaque Preprocessing {#slide-19 auto-animate=true auto-animate-id="bank" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
+## Lazy Practice #3.2: **Opaque Preprocessing** {#slide-19 auto-animate=true}
 
-<!-- Original PowerPoint slide 19 -->
-
-:::: {.columns}
-::: {.column width="38%"}
-- Annotated usage for *N* = 9 articles using Bank Marketing (Moro et al., 2012) dataset
+::: {.narrow style="--w:450px"}
+- Annotated usage for *N* = 9 articles using Bank Marketing [(Moro et al., 2012)]{.cite} dataset
 :::
-::: {.column width="62%"}
-<div class="morph-scene" style="width:614px;height:458px"><img data-id="bank-chart" src="assets/bank-marketing-full.png" style="left:-0.420px;top:-0.260px;width:615.058px;height:457.619px;clip-path:inset(0.00000% 33.66900% 0.00000% 0.00000%);" alt="Original figure, progressive view"></div>
+
+::: {.stage}
+![](assets/bank-marketing-full.png){data-id="bank-chart" style="left:538px;top:157px;width:695px;clip-path:inset(0 33.669% 0 0)" fig-alt="Bank Marketing dataset versions and protected attributes"}
 :::
-::::
 
-## Lazy Practice #3.2: Opaque Preprocessing {#slide-20 auto-animate=true auto-animate-id="bank" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
+## Lazy Practice #3.2: **Opaque Preprocessing** {#slide-20 auto-animate=true}
 
-<!-- Original PowerPoint slide 20 -->
-
-:::: {.columns}
-::: {.column width="38%"}
-- Annotated usage for *N* = 9 articles using Bank Marketing (Moro et al., 2012) dataset
-
-- *N* = 7 different variants of usage, all using the *“same”* dataset
+::: {.narrow style="--w:450px"}
+- Annotated usage for *N* = 9 articles using Bank Marketing [(Moro et al., 2012)]{.cite} dataset
+- *N* = 7 different variants of usage, all using the *"same"* dataset
   - Variants affect model choice / fairness metrics
   - Lower bound of variation (only three decisions)
 :::
-::: {.column width="62%"}
-<div class="morph-scene" style="width:614px;height:458px"><img data-id="bank-chart" src="assets/bank-marketing-full.png" style="left:-0.420px;top:-0.260px;width:615.058px;height:457.619px;clip-path:inset(0.00000% 0.27100% 0.00000% 0.00000%);" alt="Original figure, progressive view"></div>
+
+::: {.stage}
+![](assets/bank-marketing-full.png){data-id="bank-chart" style="left:538px;top:157px;width:695px;clip-path:inset(0 0.271% 0 0)" fig-alt="Seven variants of using the Bank Marketing dataset"}
 :::
-::::
 
-## Key Points {#slide-21}
+## **Key Points** {#slide-21}
 
-<!-- Original PowerPoint slide 21 -->
-
-:::: {.columns}
-::: {.column width="72%"}
 - **Neglected Identities** in availability and usage of prot. attributes
 
-::: {.fragment .appear data-fragment-index="0"}
+. . .
+
 - **Omitted Populations** during the preprocessing of data
-:::
 
+. . .
 
-::: {.fragment .appear data-fragment-index="1"}
 - **Opaque Preprocessing:** High variability & lack of documentation
   - Which version of a dataset was used
   - Reproducible source code of analyses
-:::
 
-:::
-::: {.column width="28%"}
-::: {.fragment .appear data-fragment-index="2"}
-![](assets/slide-21-0.png){height=245 fig-alt="FairGround logo"}
+::: {.fragment}
+<svg class="abs" style="left:0;top:0;width:1280px;height:720px;overflow:visible" viewBox="0 0 1280 720"><polygon points="716,512.5 826,512.5 826,501 872,524 826,547 826,535.5 716,535.5" transform="rotate(10 794 524)" fill="#fff" stroke="#000" stroke-width="2"/></svg>
 
-FairGround
-:::
+![](assets/slide-21-0.png){.abs style="left:865px;top:433px;width:268px" fig-alt="FairGround logo"}
 
+[FairGround]{.lbl .abs style="left:923px;top:655px;width:177px"}
 :::
-::::
 
 ::: {.notes}
 These are hard (!) and some may require also changes on the reviewer side, but worthwhile for us as a field to improve.
@@ -387,123 +315,85 @@ These are hard (!) and some may require also changes on the reviewer side, but w
 
 ## → We examined the effect of only three small processing decisions, what happens if we look at more? {#slide-22 .section-slide}
 
-<!-- Original PowerPoint slide 22 -->
+## **Contribution —**<br>One Model Many Scores: Using Multiverse Analysis to Prevent Fairness Hacking and Evaluate the Influence of Model Design Decisions {#slide-23 .contribution auto-animate=true}
 
+::: {.faces}
+![](assets/slide-23-6.png){style="left:87px;top:102px" fig-alt="Coauthor portrait"}
+![](assets/slide-23-5.png){style="left:211px;top:102px" fig-alt="Coauthor portrait"}
+:::
 
+![](assets/slide-23-4.png){.abs style="left:1048px;top:67px;width:174px" fig-alt="FAccT logo"}
 
-## Contribution — One Model Many Scores: Using Multiverse Analysis to Prevent Fairness Hacking and Evaluate the Influence of Model Design Decisions {#slide-23 .contribution}
-
-<!-- Original PowerPoint slide 23 -->
-
-![](assets/slide-23-6.png){height=65 fig-alt="Coauthor portrait"} ![](assets/slide-23-5.png){height=65 fig-alt="Coauthor portrait"} ![](assets/slide-23-4.png){height=65 fig-alt="Conference logo"}
-
-::: {.small}
+::: {.byline}
 **Jan Simson**, Florian Pfisterer, Christoph Kern
 
-Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’24 https://doi.org/10.1145/3630106.3658974
+[Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT '24<br>https://doi.org/10.1145/3630106.3658974]{.venue}
 :::
 
-::: {.pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | **(Pre-)Processing** | **Model** | **Predictions** | **Decisions** | **Evaluation** |
-
+::: {.pipeline .compact nodes="k b b b b b"}
 :::
 
-## The Machine Learning Pipeline {#slide-24 .pipeline-slide auto-animate=true auto-animate-id="pipeline-decisions" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
+## The Machine Learning Pipeline {#slide-24 auto-animate=true}
 
-<!-- Original PowerPoint slide 24 -->
-
-::: {data-id="pipeline" .pipeline .large}
-
-| <span data-id="data-icon">🗄️</span><svg class="pipeline-fork" data-id="fork-0" viewBox="0 0 120 40" style="clip-path:inset(0 100% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <svg class="pipeline-fork" data-id="fork-1" viewBox="0 0 120 40" style="clip-path:inset(0 100% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <span data-id="model-icon">🤖</span><svg class="pipeline-fork" data-id="fork-2" viewBox="0 0 120 40" style="clip-path:inset(0 100% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <svg class="pipeline-fork" data-id="fork-3" viewBox="0 0 120 40" style="clip-path:inset(0 100% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <span data-id="decision-icon">✅️ / ❌️</span><svg class="pipeline-fork" data-id="fork-4" viewBox="0 0 120 40" style="clip-path:inset(0 100% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <svg class="pipeline-fork" data-id="fork-5" viewBox="0 0 120 40" style="clip-path:inset(0 100% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | (Pre-)Processing | Model | Predictions | Decisions | Evaluation |
-
+::: {.pipeline .large icons=true forks=hide}
 :::
 
+## A Pipeline Full of Design Decisions {#slide-25 auto-animate=true}
 
-
-## A Pipeline Full of Design Decisions {#slide-25 .pipeline-slide auto-animate=true auto-animate-id="pipeline-decisions" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
-
-<!-- Original PowerPoint slide 25 -->
-
-::: {data-id="pipeline" .pipeline .large}
-
-| <span data-id="data-icon">🗄️</span><svg class="pipeline-fork" data-id="fork-0" viewBox="0 0 120 40" style="clip-path:inset(0 0% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <svg class="pipeline-fork" data-id="fork-1" viewBox="0 0 120 40" style="clip-path:inset(0 0% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <span data-id="model-icon">🤖</span><svg class="pipeline-fork" data-id="fork-2" viewBox="0 0 120 40" style="clip-path:inset(0 0% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <svg class="pipeline-fork" data-id="fork-3" viewBox="0 0 120 40" style="clip-path:inset(0 0% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <span data-id="decision-icon">✅️ / ❌️</span><svg class="pipeline-fork" data-id="fork-4" viewBox="0 0 120 40" style="clip-path:inset(0 0% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> | <svg class="pipeline-fork" data-id="fork-5" viewBox="0 0 120 40" style="clip-path:inset(0 0% 0 0)"><path d="M0 20 Q25 20 30 9 L65 9 M0 20 Q25 20 30 31 L65 31 M59 5 L65 9 L59 13 M59 27 L65 31 L59 35" fill="none" stroke="currentColor" stroke-width="2"/></svg> |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | (Pre-)Processing | Model | Predictions | Decisions | Evaluation |
-
+::: {.pipeline .large icons=true forks=show gap=66}
 :::
 
-::: {.small}
-Garden of forking paths (Gelman and Loken, 2014)
-:::
+[Garden of forking paths [(Gelman and Loken, 2014)]{.cite}]{.small .abs style="left:48px;top:662px"}
 
-## In the End, We Create Only One Of Many Potential Models {#slide-26}
+## In the End, We Create **Only One**<br>Of *Many* Potential Models {#slide-26}
 
-<!-- Original PowerPoint slide 26 -->
-
-:::: {.columns}
-::: {.column width="60%"}
-
-::: {.fragment .appear data-fragment-index="0"}
+::: {.narrow style="--w:660px"}
+::: {.fragment}
 - Explicitly combine plausible decisions to generate a *multiverse* of models
 :::
 
-
-::: {.fragment .appear data-fragment-index="1"}
+::: {.fragment}
 - *Multiverse Analysis:* Traverse and explore universes in the multiverse
-  - From Psychology (Steegen et. al, 2016)
+  - From Psychology [(Steegen et. al, 2016)]{.cite}
 :::
 
-
-::: {.fragment .appear data-fragment-index="2"}
+::: {.fragment}
 - We adapt this for fairness (and ML)
   - Compute fairness metric for each *universe*
   - Demonstrate across two studies
 :::
+:::
 
-:::
-::: {.column width="40%"}
-![](assets/slide-26-0.png){height=440 fig-alt="Branching model multiverse"}
-:::
-::::
+![](assets/slide-26-0.png){.abs style="left:773px;top:47px;width:488px" fig-alt="Branching model multiverse"}
+
+<svg class="abs" style="left:0;top:0;width:1280px;height:720px" viewBox="0 0 1280 720"><path d="M1261 66V216M1253 205l8 12 8-12" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
 
 ## Case Study: Dataset {#slide-27}
 
-<!-- Original PowerPoint slide 27 -->
+**Predict public health care coverage**
 
-- **Predict public health care coverage**
-- ACSPublicCoverage in folktables (Ding et. al, 2021)
+- ACSPublicCoverage in folktables [(Ding et. al, 2021)]{.cite}
   - Based on US Census data for state of California
 
-![](assets/slide-27-0.png){height=270 fig-alt="ACSPublicCoverage sample rows"}
+![](assets/slide-27-0.png){.abs style="left:101px;top:362px;width:1179px" fig-alt="ACSPublicCoverage sample rows"}
 
 ::: {.notes}
 N = 138,554 rows;  p = 19 features
 :::
 
-## Study 1: Model Design Decisions {#slide-28}
+## **Study 1:** Model Design Decisions {#slide-28}
 
-<!-- Original PowerPoint slide 28 -->
+9 (often implicit) Decisions [→ *N* = 61,440 universes simulated]{.muted}
 
-- 9 (often implicit) Decisions → *N* = 61,440 universes simulated
 - **Preprocessing**
   - *Exclude Features, Exclude Subgroups*
-  - *Scale, Preprocess Age, Preprocess Income, Encoding of* *Categoricals*
+  - *Scale, Preprocess Age, Preprocess Income, Encoding of Categoricals*
 - **Model**
   - *Model Type, Stratify Split*
 - **Decision**
   - *Cutoff*
 
-::: {.pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | **(Pre-)Processing** | **Model** | Predictions | **Decisions** | Evaluation |
-
+::: {.pipeline nodes="k b b b b k"}
 :::
 
 ::: {.notes}
@@ -512,12 +402,12 @@ Design Decisions => lead to different models
 e.g. using a different model type such
 :::
 
-## Equalized Odds Difference {#slide-29}
+## **Equalized Odds Difference** {#slide-29}
 
-<!-- Original PowerPoint slide 29 -->
+[$S$: prot. attr.<br>$\hat{Y}$: prediction = decision<br>$Y$: ground truth]{.abs .small style="left:990px;top:28px;line-height:1.6"}
 
 - **Separation:** Error rates should be equal across all groups $g$ of $S$
-  - aka: Equalized odds, disparate mistreatment, error rate balance and more (Pessach and Shmueli, 2022)
+  - aka: Equalized odds, disparate mistreatment, error rate balance and more [(Pessach and Shmueli, 2022)]{.cite}
 
 $$
 \begin{aligned}
@@ -526,53 +416,30 @@ P(\hat{Y}=1 \mid Y=0,S=g_1)&=P(\hat{Y}=1 \mid Y=0,S=g_2) &&\text{(FPR)}
 \end{aligned}
 $$
 
+. . .
 
-::: {.fragment .appear data-fragment-index="0"}
-- **Equalized Odds Difference:** Maximum difference in TPR and FPR between different groups $g$ of $S$ (Weerts et al., 2023)
+- **Equalized Odds Difference:** Maximum difference in *TPR* and *FPR* between different groups $g$ of $S$ [(Weerts et al., 2023)]{.cite}
   - Lower is better; ranges from 0 to 1
-:::
 
+## There is a Lot of Variation in the *Multiverse* {#slide-30}
 
-::: {.small}
-$S$: prot. attr. · $\hat{Y}$: prediction = decision · $Y$: ground truth
-:::
+![](assets/slide-30-2.png){.abs style="left:171px;top:192px;width:938px" fig-alt="Distribution of equalized odds difference across the multiverse"}
 
-## There is a Lot of Variation in the Multiverse {#slide-30}
-
-<!-- Original PowerPoint slide 30 -->
-
-![](assets/slide-30-2.png){height=470 fig-alt="Distribution of equalized odds difference across the multiverse"}
-
-::: {.small}
-← Lower is better
-:::
+[← Lower is better]{.lbl .small .abs style="left:603px;top:650px;width:175px"}
 
 ## How Can we Attribute this Variation? {#slide-31}
 
-<!-- Original PowerPoint slide 31 -->
-
-- We can use a functional analysis of variance (FANOVA) to decompose the variance (Hooker, 2007)
+- We can use a functional analysis of variance (FANOVA) to decompose the variance [(Hooker, 2007)]{.cite}
 - Allows identifying the most important decisions …and their interactions → to examine them in detail
 
-::: {.pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | (Pre-)Processing | **Model** | Predictions | **Decisions** | **Evaluation** |
-
+::: {.pipeline nodes="k b b b b k" sizes="1 1.4 1.85 .77 1.45 1.65"}
 :::
 
 ## Identifying the Most Important Decisions {#slide-32}
 
-<!-- Original PowerPoint slide 32 -->
+![](assets/slide-32-2.png){.abs style="left:88px;top:201px;width:1104px" fig-alt="FANOVA main and interaction effects ranked by importance"}
 
-<div class="annotated-figure">
-
-![](assets/slide-32-2.png){height=445 fig-alt="FANOVA main and interaction effects ranked by importance"}
-
-<svg class="annotation-overlay" viewBox="0 0 1000 400"><path class="fragment appear" data-fragment-index="0" d="M 0 74 H 26 V 62 L 52 86 L 26 110 V 98 H 0" fill="none" stroke="red" stroke-width="3"/></svg>
-</div>
-
+<svg class="overlay" viewBox="0 0 1280 720"><polygon class="fragment" points="-30,295 61,295 61,273 105,317 61,361 61,339 -30,339 -8,317" style="stroke:#c00000;stroke-width:6"/></svg>
 
 ::: {.notes}
 N = 511 main and interaction effects
@@ -580,355 +447,266 @@ N = 511 main and interaction effects
 
 ## Examining Decisions in Detail {#slide-33}
 
-<!-- Original PowerPoint slide 33 -->
+![](assets/slide-33-0.png){.abs style="left:99px;top:178px;width:733px" fig-alt="Fairness heatmap by cutoff and stratification"}
 
-:::: {.columns}
-::: {.column width="72%"}
-<div class="annotated-figure">
+![](assets/slide-33-3.png){.abs style="left:832px;top:211px;width:248px" fig-alt="Fairness metric colour scale"}
 
-![](assets/slide-33-0.png){height=420 fig-alt="Fairness heatmap by cutoff and stratification"}
+<svg class="overlay" viewBox="0 0 1280 720"><ellipse class="fragment" cx="617" cy="333" rx="64" ry="145"/></svg>
 
-<svg class="annotation-overlay" viewBox="0 0 763 550"><ellipse class="fragment appear" data-fragment-index="0" cx="540" cy="161" rx="67" ry="151" fill="none" stroke="red" stroke-width="3"/></svg>
-</div>
-:::
-::: {.column width="28%"}
-![](assets/slide-33-3.png){height=320 fig-alt="Additional cutoff comparison"}
-:::
-::::
+## **Study 2:** Evaluation {#slide-34}
 
+Different strategies to evaluate *a single model*.
 
-## Study 2: Evaluation {#slide-34}
+::: {.fragment}
+**3 Decisions**
 
-<!-- Original PowerPoint slide 34 -->
-
-- Different strategies to evaluate *a single model*.
-
-::: {.fragment .appear data-fragment-index="0"}
-- **3 Decisions**
-:::
-
-
-::: {.fragment .appear data-fragment-index="0"}
-- *Grouping of Protected Attribute* → Omitted Populations
-:::
-
-
-::: {.fragment .appear data-fragment-index="0"}
+::: {.plain}
+- *Grouping of Protected Attribute* [→ Omitted Populations]{.red}
 - *Exclusion of Subgroups during Evaluation*
-:::
-
-
-::: {.fragment .appear data-fragment-index="0"}
 - *Evaluate on a Subset*
 :::
-
-
-::: {.pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | (Pre-)Processing | Model | Predictions | Decisions | **Evaluation** |
-
 :::
 
-## Study 2: Results {#slide-35}
-
-<!-- Original PowerPoint slide 35 -->
-
-:::: {.columns}
-::: {.column width="50%"}
-28 evaluations for each model from Study 1
-
-::: {.fragment .appear data-fragment-index="0"}
-**94.51%** of models from Study 1 have a range of ΔEOD **≥ 0.9** on the fairness metric [0 - 1] for the *exact same model*
+::: {.pipeline nodes="k k k k k b"}
 :::
 
+## **Study 2:** Results {#slide-35}
 
-::: {.fragment .appear data-fragment-index="1"}
-Histogram for **single model** with *median* variation across different evaluations
+::: {.narrow style="--w:560px"}
+- 28 evaluations for each model from Study 1
+
+::: {.fragment fragment-index=1}
+- **94.51%** of models from Study 1 have a range of Δ~EOD~ **≥ 0.9** on the fairness metric [0 - 1] for the *exact same model*
 :::
 
-:::
-::: {.column width="50%"}
-::: {.fragment .appear data-fragment-index="0"}
-$\Delta_{\mathrm{EOD}}=\max(EOD)-\min(EOD)$
-
-::: {.small}
-(across the 28 evaluations, for each model from Study 1)
+::: {.fragment fragment-index=2}
+- Histogram for **single model** with *median* variation across different evaluations
 :::
 :::
 
+::: {.fragment fragment-index=1}
+[$\Delta_{\mathrm{EOD}}=\max(EOD)-\min(EOD)$]{.abs style="left:660px;top:82px;width:600px;text-align:center"}
 
-::: {.fragment .appear data-fragment-index="1"}
-![](assets/slide-35-1.png){height=330 fig-alt="Fairness metric histogram for the model with median evaluation variation"}
+[(across the 28 evaluations, for each model from Study 1)]{.abs .small .muted style="left:660px;top:132px;width:600px;text-align:center"}
 :::
 
+::: {.fragment fragment-index=2}
+![](assets/slide-35-1.png){.abs style="left:652px;top:204px;width:560px" fig-alt="Fairness metric histogram for the model with median evaluation variation"}
+
+[Fairness Metric]{.lbl .small .abs style="left:883px;top:668px;width:187px"}
 :::
-::::
 
 ::: {.notes}
 Explain delta = max – min for any given model
 :::
 
-## Study 2: Results {#slide-36}
+## **Study 2:** Results {#slide-36}
 
-<!-- Original PowerPoint slide 36 -->
+::: {.stage}
+<video data-autoplay muted playsinline src="assets/interactive-multiverse.mp4" style="left:0;top:145px;width:1280px"></video>
+:::
 
-{{< video assets/interactive-multiverse.mp4 >}}
+## Interactive Analysis {#slide-37 visibility="hidden"}
 
-## Interactive Analysis {#slide-37}
+::: {.stage}
+![](assets/slide-37-3.png){style="left:192px;top:134px;width:858px" fig-alt="Interactive multiverse analysis screenshot"}
+:::
 
-<!-- Original PowerPoint slide 37 (hidden in PowerPoint; included here for completeness) -->
-
-![](assets/slide-37-3.png){height=500 fig-alt="Interactive multiverse analysis screenshot"}
-
-## Key Points {#slide-38}
-
-<!-- Original PowerPoint slide 38 -->
+## **Key Points** {#slide-38}
 
 - Non-obvious decisions *can* matter for algorithmic fairness and are worth investigating
   - Fairness metrics are *very* susceptible to changes in evaluation strategy
 - Multiverse Analyses are a promising tool to …
-  - Better understand the influence of design decisions
-  - Protect against malicious changes in evaluation (fairness hacking)
+  a) Better understand the influence of design decisions
+  b) Protect against malicious changes in evaluation (fairness hacking)
 - Multiverse Analyses are flexible
   - Can be applied to e.g, only design or evaluation decisions
 
 ## → Could we restrict or better navigate the multiverse? {#slide-39 .section-slide}
 
-<!-- Original PowerPoint slide 39 -->
+Given computational constraints, potentially problematic decisions and opportunities of "hacking metrics"
 
-Given computational constraints, potentially problematic decisions and opportunities of “hacking metrics”
+## **Contribution —**<br>Preventing Harmful Data Practices by using Participatory Input to Navigate the Machine Learning Multiverse {#slide-40 .contribution}
 
-## Contribution — Preventing Harmful Data Practices by using Participatory Input to Navigate the Machine Learning Multiverse {#slide-40 .contribution}
+::: {.faces}
+![](assets/slide-40-5.png){style="left:87px;top:112px" fig-alt="Coauthor portrait"}
+![](assets/slide-40-7.png){style="left:207px;top:112px" fig-alt="Coauthor portrait"}
+![](assets/slide-40-4.png){style="left:327px;top:110px" fig-alt="Coauthor portrait"}
+:::
 
-<!-- Original PowerPoint slide 40 -->
+![](assets/slide-40-6.png){.abs style="left:1030px;top:47px;width:200px" fig-alt="CHI logo"}
 
-![](assets/slide-40-5.png){height=65 fig-alt="Coauthor portrait"} ![](assets/slide-40-7.png){height=65 fig-alt="Coauthor portrait"} ![](assets/slide-40-4.png){height=65 fig-alt="Coauthor portrait"} ![](assets/slide-40-6.png){height=65 fig-alt="Conference logo"}
-
-::: {.small}
+::: {.byline}
 **Jan Simson**, Fiona Draxler, Samuel Mehr, Christoph Kern
 
-Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, CHI ’25 https://doi.org/10.1145/3706598.3713482
+[Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, CHI '25<br>https://doi.org/10.1145/3706598.3713482]{.venue}
 :::
 
-::: {.pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | **(Pre-)Processing** | **Model** | **Predictions** | **Decisions** | **Evaluation** |
-
+::: {.pipeline .compact nodes="k b b b b b"}
 :::
 
-## What Did we Do? {#slide-41}
+## **What Did we Do?** {#slide-41}
 
-<!-- Original PowerPoint slide 41 -->
-
-:::: {.columns}
-::: {.column width="60%"}
+::: {.narrow style="--w:600px"}
 - Survey where we asked laypeople how they would build an ADM system
 
-::: {.fragment .appear data-fragment-index="0"}
+::: {.fragment fragment-index=1}
 - Scenario: *ACSPublicCoverage*
 :::
 
-
-::: {.fragment .appear data-fragment-index="1"}
+::: {.fragment fragment-index=2}
 - 4 Model Design Decisions
-  - *Exclude Subgroups, Exclude Features,* *Preprocess Income, Model*
-:::
-
-
-::: {.fragment .appear data-fragment-index="1"}
+  - *Exclude Subgroups, Exclude Features, Preprocess Income, Model*
 - 4 Evaluation Decisions
   - *Eval Fairness Definition, Eval Fairness Grouping, Eval on Subset, Eval Exclude Subgroups*
 :::
-
 :::
-::: {.column width="40%"}
-![](assets/slide-41-2.png){height=450 fig-alt="Survey structure"}
-:::
-::::
 
-## Example: Exclude Features {#slide-42 .smaller}
+![](assets/slide-41-2.png){.abs style="left:686px;top:77px;width:537px" fig-alt="Survey structure"}
 
-<!-- Original PowerPoint slide 42 -->
+## **Example:** *Exclude Features* {#slide-42}
 
+::: {style="font-size:22px"}
 **What kind of information should an AI system use?** Sometimes AI systems take into account potentially sensitive characteristics […]
 
 […]
+:::
 
+::: {.opt-regular .options}
 - **Do not exclude any sensitive characteristics:** This means the AI is trained with all available information, including sensitive characteristics like race and sex.
 - **Exclude race from the system:** This means the AI uses all information available but not race.
-- [ … ]
-- I don’t understand the description
+- […]
+:::
+
+::: {.opt-other .options}
+- I don't understand the description
 - I prefer not to answer
 - Suggest an alternative option: __________
+:::
 
-## Going Online {#slide-43}
+## **Going Online** {#slide-43}
 
-<!-- Original PowerPoint slide 43 -->
-
-:::: {.columns}
-::: {.column width="38%"}
+::: {.narrow style="--w:430px"}
 - Published on citizen science website
   - themusiclab.org
 - N = 375 complete sessions
   - Multiple countries
   - WEIRD bias (especially U.S.)
 :::
-::: {.column width="62%"}
-![](assets/slide-43-2.png){height=330 fig-alt="Geographic distribution of participants"}
-:::
-::::
 
-## Results {#slide-44 auto-animate=true auto-animate-id="responses" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
+![](assets/slide-43-2.png){.abs style="left:525px;top:249px;width:728px" fig-alt="Geographic distribution of participants"}
 
-<!-- Original PowerPoint slide 44 -->
+## **Results** {#slide-44 auto-animate=true}
 
-:::: {.columns}
-::: {.column width="52%"}
+::: {.narrow style="--w:640px"}
 - Meaningful responses
 - High agreement, but also diversity in responses
 - A notable number of people skip through the study
 :::
-::: {.column width="48%"}
-<div class="morph-scene" style="width:370px;height:490px"><img data-id="response-chart" src="assets/participant-responses-full.png" style="left:0.129px;top:-0.243px;width:368.499px;height:489.435px;clip-path:inset(0.00000% 0.00000% 0.00000% 0.00000%);" alt="Original figure, progressive view"></div>
+
+::: {.stage}
+![](assets/participant-responses-full.png){data-id="responses" style="left:780px;top:71px;width:478px" fig-alt="Participant responses across decisions"}
 :::
-::::
 
-##  {#slide-45 .figure-only auto-animate=true auto-animate-id="responses" auto-animate-duration="1" auto-animate-easing="ease-in-out"}
+## {#slide-45 auto-animate=true}
 
-<!-- Original PowerPoint slide 45 -->
+::: {.stage}
+![](assets/participant-responses-full.png){data-id="responses" style="left:17px;top:28px;width:1058px" fig-alt="Participant responses, zoomed into the top"}
+![](assets/response-annotation-45-0.png){data-id="responses-legend" style="left:17px;top:19px;width:605px;clip-path:inset(0 0 23.466% 0)" fig-alt="Legend: type of response"}
+![](assets/response-annotation-45-1.jpg){data-id="responses-note-top" style="left:1073px;top:67px;width:145px" fig-alt="The most common combination of options"}
+:::
 
-<div class="morph-scene" style="width:1134px;height:610px"><img data-id="response-chart" src="assets/participant-responses-full.png" style="left:14.673px;top:24.358px;width:937.024px;height:1244.541px;clip-path:inset(0.00000% 0.00000% 0.00000% 0.00000%);" alt="Original figure, progressive view"><img data-id="response-annotation-45-0" src="assets/response-annotation-45-0.png" style="left:14.67px;top:16.78px;width:535.50px;height:94.22px" alt="Original response-flow annotation"><img data-id="response-annotation-45-1" src="assets/response-annotation-45-1.jpg" style="left:949.67px;top:59.28px;width:128.40px;height:531.59px" alt="Original response-flow annotation"></div>
+## {#slide-46 auto-animate=true auto-animate-duration=1.5}
 
-##  {#slide-46 .figure-only auto-animate=true auto-animate-id="responses" auto-animate-duration="1.5" auto-animate-easing="ease-in-out"}
-
-<!-- Original PowerPoint slide 46 -->
-
-<div class="morph-scene" style="width:1134px;height:610px"><img data-id="response-chart" src="assets/participant-responses-full.png" style="left:146.347px;top:-455.476px;width:813.723px;height:1080.775px;clip-path:inset(0.00000% 0.00000% 0.00000% 0.00000%);" alt="Original figure, progressive view"><img data-id="response-annotation-46-1" src="assets/response-annotation-46-1.jpg" style="left:205.42px;top:209.13px;width:388.52px;height:197.50px" alt="Original response-flow annotation"><img data-id="response-annotation-46-2" src="assets/response-annotation-46-2.jpg" style="left:963.76px;top:420.64px;width:159.61px;height:169.24px" alt="Original response-flow annotation"><img data-id="response-annotation-46-4" src="assets/response-annotation-46-4.png" style="left:14.67px;top:423.97px;width:535.50px;height:94.22px" alt="Original response-flow annotation"></div>
+::: {.stage}
+![](assets/participant-responses-full.png){data-id="responses" style="left:165px;top:-514px;width:919px" fig-alt="Participant responses, zoomed into the bottom"}
+![](assets/response-annotation-45-0.png){data-id="responses-legend" style="left:17px;top:-264px;width:605px;clip-path:inset(0 0 23.466% 0)" fig-alt=""}
+![](assets/response-annotation-46-4.png){data-id="responses-legend-bottom" style="left:17px;top:479px;width:605px;clip-path:inset(0 0 23.466% 0)" fig-alt="Legend: type of response"}
+![](assets/response-annotation-46-1.jpg){data-id="responses-note-empty" style="left:232px;top:236px;width:439px" fig-alt="Most empty responses come from participants who never respond to any decisions"}
+![](assets/response-annotation-46-2.jpg){data-id="responses-note-other" style="left:1088px;top:475px;width:180px" fig-alt="The most common other option is that people prefer not to answer"}
+:::
 
 ## Different People Make Different Choices {#slide-47}
 
-<!-- Original PowerPoint slide 47 -->
-
 - Responses differ between different groups
-  - Higher rate of inclusion for one’s own subgroup
-  - More likely to suggest alternatives by those with high AI literacy
+  1. Higher rate of inclusion for one's own subgroup
+  2. More likely to suggest alternatives by those with high AI literacy
 
-::: {.fragment .appear data-fragment-index="0"}
+. . .
+
 - Compared only a small subset of possible comparisons
+
+::: {style="margin-left:.4em"}
+**→ Importance of diverse sample**
 :::
 
+## Participatory Input Leads to<br>**Well-performing Models** {#slide-48}
 
-::: {.fragment .appear data-fragment-index="0"}
-- **→ Importance of diverse sample**
-:::
+![](assets/slide-48-0.png){.abs style="left:85px;top:230px;width:1111px" fig-alt="Performance and fairness of full and participatory multiverses"}
 
+[**Full Multiverse**]{.lbl .small .abs style="left:280px;top:194px;width:187px"}
+[**Participatory Multiverse**]{.lbl .small .abs style="left:779px;top:194px;width:290px"}
+[← Lower is better]{.lbl .abs style="left:306px;top:668px;width:135px;font-size:11px"}
+[← Lower is better]{.lbl .abs style="left:856px;top:668px;width:135px;font-size:11px"}
+[Higher is better →]{.lbl .abs style="left:33px;top:450px;width:139px;font-size:11px;rotate:-90deg"}
+[Higher is better →]{.lbl .abs style="left:587px;top:450px;width:139px;font-size:11px;rotate:-90deg"}
 
-## Participatory Input Leads to Well-performing Models {#slide-48}
+<svg class="overlay" viewBox="0 0 1280 720"><path class="fragment" data-fragment-index="0" d="M975 392Q968 345 932 326M940.5 339.5L932 326L948 325.4" style="stroke-width:4;stroke-linecap:round;stroke-linejoin:round"/><ellipse class="fragment" data-fragment-index="1" cx="1005" cy="263" rx="101" ry="45" style="stroke-width:3"/></svg>
 
-<!-- Original PowerPoint slide 48 -->
-
-::: {.small}
-**Full Multiverse**　　　　　　　　　　　　　　　　　**Participatory Multiverse**
-:::
-
-<div class="annotated-figure">
-
-![](assets/slide-48-0.png){height=425 fig-alt="Performance and fairness of full and participatory multiverses"}
-
-<svg class="annotation-overlay" viewBox="0 0 1157 474"><defs><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="red"/></marker></defs><path class="fragment appear" data-fragment-index="0" d="M 947 146 Q 920 109 865 126" fill="none" stroke="red" stroke-width="2" marker-end="url(#arrowhead)"/><ellipse class="fragment appear" data-fragment-index="1" cx="959" cy="35" rx="105" ry="47" fill="none" stroke="red" stroke-width="2"/></svg>
-</div>
-
-::: {.small}
-Fairness metric: ← Lower is better · Performance metric: Higher is better →
-:::
-
-## Key Points {#slide-49}
-
-<!-- Original PowerPoint slide 49 -->
+## **Key Points** {#slide-49}
 
 - Non-developers can provide meaningful input on ML design
 
-::: {.fragment .appear data-fragment-index="0"}
-- Participatory input can help combat “lazy” data practices and produces reasonable & competitive models
+. . .
+
+- Participatory input can help combat "lazy" data practices and produces reasonable & competitive models
   - (Dis)agreement can be a helpful signal
-:::
 
+. . .
 
-::: {.fragment .appear data-fragment-index="1"}
 - Involving a diverse set of stakeholders matters
-:::
 
+## **Closing**<br>**& Outlook** {#slide-50 .section-slide}
 
-## Closing & Outlook {#slide-50 .section-slide}
-
-<!-- Original PowerPoint slide 50 -->
-
-
-
-## Closing: Re-Evaluating the ML Pipeline {#slide-51}
-
-<!-- Original PowerPoint slide 51 -->
-
-- Discovered problematic *“lazy” data practices* in the field
-
-::: {.fragment .appear data-fragment-index="0"}
-- Saw how fairness metrics can be *hacked* by changing the *evaluation protocol*
-:::
-
-
-::: {.fragment .appear data-fragment-index="1"}
-- *(Participatory) multiverse analyses* as potential remedies and powerful methodologies
-:::
-
+## **Closing:** Re-Evaluating the ML Pipeline {#slide-51}
 
 ::: {.pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | (Pre-)Processing | Model | Predictions | Decisions | Evaluation |
-
 :::
+
+- Discovered problematic *"lazy" data practices* in the field
+
+. . .
+
+- Saw how fairness metrics can be *hacked* by changing the *evaluation protocol*
+
+. . .
+
+- *(Participatory) multiverse analyses* as potential remedies and powerful methodologies
 
 ::: {.notes}
 We saw effective techniques of how the machine learning pipeline can be re-evaluated
 :::
 
-## Outlook {#slide-52}
-
-<!-- Original PowerPoint slide 52 -->
+## **Outlook** {#slide-52}
 
 - Dataset annotations limited in scope → expand scope
   - (Partially) automate annotations
 
-::: {.fragment .appear data-fragment-index="0"}
+. . .
+
 - Arbitrariness in choice of *plausible* decisions
   - Systematic discovery of decision points
-:::
 
+. . .
 
-::: {.fragment .appear data-fragment-index="1"}
-- “Consultation” in participatory multiverse
+- "Consultation" in participatory multiverse
   - More empowering forms, e.g., co-design of participatory process
-:::
 
+. . .
 
-::: {.fragment .appear data-fragment-index="2"}
 - Expand into other domains, e.g., text, image
-:::
 
+## **Thank you!** {#slide-53 .section-slide}
 
-## Thank you! {#slide-53 .section-slide}
-
-<!-- Original PowerPoint slide 53 -->
-
-::: {.pipeline}
-
-| ● | ● | ● | ● | ● | ● |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Data | (Pre-)Processing | Model | Predictions | Decisions | Evaluation |
-
+::: {.pipeline .bare y=514}
 :::
