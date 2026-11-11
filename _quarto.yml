@@ -1,0 +1,43 @@
+project:
+  type: book
+
+book:
+  title: "Responsible AI Course: Algorithmic Fairness"
+  author:
+    - name: Christoph Kern
+      orcid: 0000-0001-7363-4299
+      affiliations:
+        - id: lmu-stat
+          name: LMU Munich
+          department: Department of Statistics
+          city: Munich
+          country: Germany
+        - id: mcml
+          name: Munich Center for Machine Learning (MCML)
+          city: Munich
+          country: Germany
+        - id: uni-mannheim
+          name: University of Mannheim
+          city: Mannheim
+          country: Germany
+    - name: Jan Simson
+      orcid: 0000-0002-9406-7761
+      affiliations:
+        - ref: lmu-stat
+        - ref: mcml
+        - ref: uni-mannheim
+  date: "11/11/2026"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+
