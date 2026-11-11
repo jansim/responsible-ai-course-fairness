@@ -29,9 +29,9 @@ book:
   date: "11/11/2026"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - 0.1-intro.qmd
+    - 1.0-foundations-of-fairness.qmd
+    - 2.0-research-findings.qmd
 
 bibliography: references.bib
 
