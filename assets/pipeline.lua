@@ -22,6 +22,9 @@ local X      = {97, 315, 533, 751, 969, 1187}
 local LABELS = {"Data", "(Pre-)<br>Processing", "Model", "Predictions", "Decisions", "Evaluation"}
 local DOT    = 32
 local LINE   = 6
+local WIDTH  = 1280
+local BLEED  = 2000   -- line runs this far past both slide edges, so it reaches
+                      -- the screen edge at any viewport aspect ratio
 
 local VARIANTS = {
   regular = {y = 562, label = 26, gap = 30},
@@ -104,12 +107,12 @@ local function build(div)
   local gap   = tonumber(div.attributes.gap) or v.gap
 
   -- line: lead-in, five segments, lead-out
-  out[#out + 1] = span("pl-line c-" .. single(nodes[1]), "pl-line-in", -22, top, X[1] + 22, LINE)
+  out[#out + 1] = span("pl-line c-" .. single(nodes[1]), "pl-line-in", -BLEED, top, X[1] + BLEED, LINE)
   for i = 1, 5 do
     out[#out + 1] = span("pl-line c-" .. shared(nodes[i], nodes[i + 1]), "pl-line-" .. i,
                          X[i], top, X[i + 1] - X[i], LINE)
   end
-  out[#out + 1] = span("pl-line c-" .. single(nodes[6]), "pl-line-out", X[6], top, 1302 - X[6], LINE)
+  out[#out + 1] = span("pl-line c-" .. single(nodes[6]), "pl-line-out", X[6], top, WIDTH + BLEED - X[6], LINE)
 
   -- forks (drawn below dots)
   local forks = div.attributes.forks
