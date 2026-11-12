@@ -12,11 +12,11 @@ format:
 
 [Responsible AI Course: Algorithmic Fairness]{.subtitle}
 
-![](assets/slide-01-3.png){.absolute left=46 top=30 width=396 fig-alt="LMU München"}
+![](assets/logo-mcml.png){.absolute left=62 top=99 width=450 fig-alt="MCML"}
 
-![](assets/logo-mcml.png){.absolute left=985 top=110 width=330 fig-alt="MCML"}
+![](assets/slide-01-3.png){.absolute left=1302 top=66 width=255 fig-alt="LMU München"}
 
-![](assets/logo-uni-mannheim.png){.absolute left=1375 top=66 width=480 fig-alt="Universität Mannheim"}
+![](assets/logo-uni-mannheim.png){.absolute left=1575 top=92 width=285 fig-alt="Universität Mannheim"}
 
 [Christoph Kern]{.author}
 
