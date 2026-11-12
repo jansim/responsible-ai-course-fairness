@@ -9,7 +9,8 @@ format:
     center: false
     auto-stretch: false
     slide-number: true
-    transition: none
+    transition: fade
+    transition-speed: fast
     auto-animate-duration: 0.8
     auto-animate-easing: ease-in-out
     navigation-mode: linear
@@ -461,7 +462,7 @@ N = 511 main and interaction effects
 
 ![](assets/slide-33-3.png){.absolute left=832 top=211 width=248 fig-alt="Fairness metric colour scale"}
 
-<svg class="overlay marker" viewBox="0 0 1280 720"><ellipse class="fragment" cx="617" cy="333" rx="64" ry="145"/></svg>
+<svg class="overlay marker" viewBox="0 0 1280 720"><ellipse class="fragment" pathLength="1" cx="617" cy="333" rx="64" ry="145"/></svg>
 
 ## **Study 2:** Evaluation
 
@@ -619,7 +620,7 @@ Given computational constraints, potentially problematic decisions and opportuni
 ::: {.stage}
 ![](assets/participant-responses-full.png){.absolute data-id="responses" left=17 top=28 width=1058 fig-alt="Participant responses, zoomed into the top"}
 ![](assets/response-annotation-45-0.png){.absolute data-id="responses-legend" left=17 top=19 width=605 style="clip-path:inset(0 0 23.466% 0);" fig-alt="Legend: type of response"}
-![](assets/response-annotation-45-1.jpg){.absolute data-id="responses-note-top" left=1073 top=67 width=145 fig-alt="The most common combination of options"}
+![](assets/response-annotation-45-1.jpg){.absolute data-id="responses-note-top" left=1073 top=67 width=145 data-auto-animate-delay=0.6 data-auto-animate-duration=0.4 fig-alt="The most common combination of options"}
 :::
 
 ## {auto-animate=true auto-animate-duration=1.5}
@@ -627,9 +628,9 @@ Given computational constraints, potentially problematic decisions and opportuni
 ::: {.stage}
 ![](assets/participant-responses-full.png){.absolute data-id="responses" left=165 top=-514 width=919 fig-alt="Participant responses, zoomed into the bottom"}
 ![](assets/response-annotation-45-0.png){.absolute data-id="responses-legend" left=17 top=-264 width=605 style="clip-path:inset(0 0 23.466% 0);" fig-alt=""}
-![](assets/response-annotation-46-4.png){.absolute data-id="responses-legend-bottom" left=17 top=479 width=605 style="clip-path:inset(0 0 23.466% 0);" fig-alt="Legend: type of response"}
-![](assets/response-annotation-46-1.jpg){.absolute data-id="responses-note-empty" left=232 top=236 width=439 fig-alt="Most empty responses come from participants who never respond to any decisions"}
-![](assets/response-annotation-46-2.jpg){.absolute data-id="responses-note-other" left=1088 top=475 width=180 fig-alt="The most common other option is that people prefer not to answer"}
+![](assets/response-annotation-46-4.png){.absolute data-id="responses-legend-bottom" left=17 top=479 width=605 style="clip-path:inset(0 0 23.466% 0);" data-auto-animate-delay=1.2 data-auto-animate-duration=0.4 fig-alt="Legend: type of response"}
+![](assets/response-annotation-46-1.jpg){.absolute data-id="responses-note-empty" left=232 top=236 width=439 data-auto-animate-delay=1.2 data-auto-animate-duration=0.4 fig-alt="Most empty responses come from participants who never respond to any decisions"}
+![](assets/response-annotation-46-2.jpg){.absolute data-id="responses-note-other" left=1088 top=475 width=180 data-auto-animate-delay=1.2 data-auto-animate-duration=0.4 fig-alt="The most common other option is that people prefer not to answer"}
 :::
 
 ## Different People Make Different Choices
@@ -655,7 +656,7 @@ Given computational constraints, potentially problematic decisions and opportuni
 [Higher is better →]{.absolute .lbl .axis-hint .vertical left=33 top=450 width=139}
 [Higher is better →]{.absolute .lbl .axis-hint .vertical left=587 top=450 width=139}
 
-<svg class="overlay marker" viewBox="0 0 1280 720"><path class="fragment" data-fragment-index="0" d="M975 392Q968 345 932 326M940.5 339.5L932 326L948 325.4" style="stroke-width:4;stroke-linecap:round;stroke-linejoin:round"/><ellipse class="fragment" data-fragment-index="1" cx="1005" cy="263" rx="101" ry="45" style="stroke-width:3"/></svg>
+<svg class="overlay marker" viewBox="0 0 1280 720"><path class="fragment" pathLength="1" data-fragment-index="0" d="M975 392Q968 345 932 326M940.5 339.5L932 326L948 325.4" style="stroke-width:4;stroke-linecap:round;stroke-linejoin:round"/><ellipse class="fragment" pathLength="1" data-fragment-index="1" cx="1005" cy="263" rx="101" ry="45" style="stroke-width:3"/></svg>
 
 ## **Key Points**
 

@@ -139,3 +139,38 @@ $muted: #7f7f7f;
 .reveal .opt-other { border-left: 5px solid #d8b13b; margin: .3em 0; }
 .reveal .plain ul { list-style: none; margin-left: 0; }
 .reveal .plain li { margin-bottom: .2em; }
+
+// ---- motion ----------------------------------------------------------------
+// Fragments fade in with a slight rise. Fragments that contain absolutely
+// positioned elements only fade: a transform would make the fragment the
+// containing block of those elements and shift them while animating.
+.reveal .slides section .fragment {
+  transition: opacity .4s ease-out, transform .4s ease-out, visibility .4s;
+}
+.reveal .slides section .fragment:not(:has(.absolute, .overlay)) { transform: translateY(10px); }
+.reveal .slides section .fragment.visible:not(:has(.absolute, .overlay)) { transform: none; }
+
+// Hand-drawn markers (paths / ellipses with pathLength="1") draw themselves in
+.reveal .slides section .overlay.marker :is(path, ellipse).fragment {
+  transform: none;
+  stroke-dasharray: 1 2; stroke-dashoffset: 1;
+  transition: opacity .1s, stroke-dashoffset .7s ease-in-out, visibility .1s;
+}
+.reveal .slides section .overlay.marker :is(path, ellipse).fragment.visible { stroke-dashoffset: 0; }
+// ... the large block arrow slides in from the slide edge
+.reveal .slides section .overlay.marker polygon.fragment {
+  transform: translateX(-90px);
+  transition: opacity .3s ease-out, transform .5s cubic-bezier(.2, .8, .3, 1), visibility .3s;
+}
+.reveal .slides section .overlay.marker polygon.fragment.visible { transform: none; }
+
+// "Not quite that simple" tape is pulled across the slide along its own axis
+// (`transform` applies after the `rotate` property, i.e. in the tape's frame)
+.reveal .slides section.slide .tape.fragment {
+  transform: translateX(-1700px);
+  transition: opacity .15s ease-out, transform .6s cubic-bezier(.2, .8, .25, 1), visibility .15s;
+}
+.reveal .slides section.slide .tape.fragment.visible { transform: none; }
+
+// Annotation JPGs have white backgrounds; blend them away over the figure
+.reveal .stage img[src$=".jpg"] { mix-blend-mode: multiply; }
