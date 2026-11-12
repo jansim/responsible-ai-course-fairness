@@ -4,8 +4,15 @@ These are the materials for the **Algorithmic Fairness** session of the Responsi
 
 Machine learning systems increasingly prepare or make decisions about people, from risk assessments in criminal justice to the allocation of public services. This session looks at what it means for such systems to be *fair*, how unfairness can be measured, and where in the machine learning pipeline it arises.
 
-The materials are organised as a book. Each session is a chapter, and every chapter is also available as a slide deck:
+The session has two parts. The first introduces the core concepts: how automated decision-making systems can disadvantage groups of people, where bias in data comes from, and the main formal notions of fairness and the trade-offs between them, plus a hands-on lab in R. The second presents recent research on how choices made throughout the machine learning pipeline affect fairness, and what this means for practice.
 
-- [Introduction](0.1-intro.qmd): overview and agenda
-- [Foundations of Algorithmic Fairness](1.0-foundations-of-fairness.qmd): automated decision-making, bias in data, group, individual and multi-group fairness, plus a hands-on lab in R
-- [Research Findings and How They May Inform Practice](2.0-research-findings.qmd): recent research re-examining the machine learning pipeline
+The materials are organised as a book. Each part is a chapter, and every chapter is also available as a slide deck.
+
+## Agenda
+
+| Time          | Session                                                                       | Materials                                                                                        |
+|---------------|-------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| 09:00 – 10:15 | Foundations of Algorithmic Fairness                                           | [Chapter](1.0-foundations-of-fairness.qmd) · [Slides](slides/1.0-foundations-of-fairness.html)   |
+| 10:15 – 10:30 | Break ☕                                                                       |                                                                                                  |
+| 10:30 – 11:00 | Research Findings and How They May Inform Practice                            | [Chapter](2.0-research-findings.qmd) · [Slides](slides/2.0-research-findings-slides.html)        |
+| 11:00 – 11:15 | Questions & Discussion                                                        |                                                                                                  |
