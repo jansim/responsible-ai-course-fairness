@@ -330,6 +330,8 @@ None keep Asians / native Americas as distinct groups around
 ![](assets/slide-21-0.png){.absolute left=865 top=433 width=268 fig-alt="FairGround logo"}
 
 [FairGround]{.absolute .lbl left=923 top=655 width=177}
+
+[[https://arxiv.org/abs/2510.22363](https://arxiv.org/abs/2510.22363)]{.absolute .lbl left=857 top=690 width=308 style="font-size: 0.45em;"}
 :::
 
 ::: {.notes}
