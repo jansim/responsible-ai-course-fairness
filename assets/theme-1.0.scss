@@ -1,0 +1,22 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap');
+
+/*-- scss:rules --*/
+// Title slide, matching the 2.0 deck's `.opening` design (theme.scss)
+// scaled from its 1280 x 720 canvas to this deck's 1920 x 1200 one.
+.reveal .slides section.opening { top: 0 !important; }
+.reveal .slides section.opening h2 {
+  position: absolute; left: 46px; bottom: 470px; width: 1230px; margin: 0;
+  font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  font-size: 75px; font-weight: 400; line-height: 1.15; color: #000;
+}
+.reveal .opening h2 strong { font-weight: 700; }
+.reveal .opening .absolute { margin: 0; max-width: none; max-height: none; }
+.reveal .opening .author {
+  position: absolute; left: 57px; top: 770px;
+  font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 45px;
+}
+.reveal .opening .date {
+  position: absolute; left: 0; width: 100%; top: 1100px; text-align: center;
+  font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 27px; color: #7f7f7f;
+}

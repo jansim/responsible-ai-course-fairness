@@ -1,12 +1,24 @@
 ---
-title: "Foundations of Algorithmic Fairness"
-author: "Christoph Kern"
+pagetitle: "Foundations of Algorithmic Fairness"
 format:
   revealjs:
+    theme: [default, assets/theme-1.0.scss]
     width: 1920
     height: 1200
     scrollable: true
 ---
+
+## **Foundations** of Algorithmic **Fairness** {.opening}
+
+![](assets/slide-01-3.png){.absolute left=46 top=30 width=396 fig-alt="LMU München"}
+
+![](assets/logo-mcml.png){.absolute left=985 top=110 width=330 fig-alt="MCML"}
+
+![](assets/logo-uni-mannheim.png){.absolute left=1375 top=66 width=480 fig-alt="Universität Mannheim"}
+
+[Christoph Kern]{.author}
+
+[20.11.2026]{.date}
 
 - Automated Decision-Making (ADM)
   - The COMPAS Case
