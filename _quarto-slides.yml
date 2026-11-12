@@ -1,9 +1,9 @@
 # Profile for rendering the chapters as reveal.js slide decks.
 #
-#   quarto render                                   # 1. the book  -> _book/
-#   quarto render --profile slides --to revealjs    # 2. the decks -> _book/slides/
+#   quarto render                                   # 1. the website -> _book/
+#   quarto render --profile slides --to revealjs    # 2. the decks   -> _book/slides/
 #
-# Render the book first: it cleans _book/ and would remove the slides otherwise.
+# Render the website first: it cleans _book/ and would remove the slides otherwise.
 # Per-deck reveal.js options live in each chapter's front matter.
 
 project:

@@ -1,4 +1,4 @@
-name: Build and deploy Quarto book
+name: Build and deploy Quarto website
 
 on:
   push:
@@ -46,10 +46,10 @@ jobs:
             any::mlr3fairness
             any::mcboost
 
-      - name: Render book
+      - name: Render website
         uses: quarto-dev/quarto-actions/render@v2
 
-      # after the book: rendering the book cleans _book/
+      # after the website: rendering the website cleans _book/
       - name: Render slides
         run: quarto render --profile slides --to revealjs
 

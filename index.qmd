@@ -6,7 +6,7 @@ Machine learning systems increasingly prepare or make decisions about people, fr
 
 The session has two parts. The first introduces the core concepts: how automated decision-making systems can disadvantage groups of people, where bias in data comes from, and the main formal notions of fairness and the trade-offs between them, plus a hands-on lab in R. The second presents recent research on how choices made throughout the machine learning pipeline affect fairness, and what this means for practice.
 
-The materials are organised as a book. Each part is a chapter, and every chapter is also available as a slide deck.
+Each part of the session has its own page on this website, and every page is also available as a slide deck.
 
 ## Agenda
 
