@@ -12,7 +12,7 @@ The materials are organised as a book. Each part is a chapter, and every chapter
 
 | Time          | Session                                            | Materials                                                                                             |
 |---------------|----------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| 09:00 – 10:15 | Foundations of Algorithmic Fairness                | [Chapter](1.0-foundations-of-fairness.qmd) · [Slides](slides/1.0-foundations-of-fairness-slides.html) |
+| 09:00 – 10:15 | Foundations of Algorithmic Fairness                | [Intro](1.0-foundations-of-fairness.qmd) · [Slides](slides/1.0-foundations-of-fairness-slides.html) |
 | 10:15 – 10:30 | Break ☕                                            |                                                                                                       |
-| 10:30 – 11:00 | Research Findings and How They May Inform Practice | [Chapter](2.0-research-findings.qmd) · [Slides](slides/2.0-research-findings-slides.html)             |
+| 10:30 – 11:00 | Research Findings and How They May Inform Practice | [Intro](2.0-research-findings.qmd) · [Slides](slides/2.0-research-findings-slides.html)             |
 | 11:00 – 11:15 | Questions & Discussion                             |                                                                                                       |
