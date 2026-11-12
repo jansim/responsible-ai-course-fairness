@@ -1,3 +1,8 @@
+---
+filters:
+  - assets/slide-citations.lua
+---
+
 # References {.unnumbered}
 
 ::: {#refs}
