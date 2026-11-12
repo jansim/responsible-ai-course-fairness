@@ -22,6 +22,8 @@ format:
 
 [20.11.2026]{.date}
 
+## Overview
+
 - Automated Decision-Making (ADM)
   - The COMPAS Case
 - Fairness in Machine Learning
