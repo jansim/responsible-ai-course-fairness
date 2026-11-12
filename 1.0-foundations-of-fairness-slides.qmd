@@ -10,6 +10,8 @@ format:
 
 ## **Foundations** of Algorithmic **Fairness** {.opening}
 
+[Responsible AI Course: Algorithmic Fairness]{.subtitle}
+
 ![](assets/slide-01-3.png){.absolute left=46 top=30 width=396 fig-alt="LMU München"}
 
 ![](assets/logo-mcml.png){.absolute left=985 top=110 width=330 fig-alt="MCML"}

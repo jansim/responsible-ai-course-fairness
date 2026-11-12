@@ -12,8 +12,12 @@
 }
 .reveal .opening h2 strong { font-weight: 700; }
 .reveal .opening .absolute { margin: 0; max-width: none; max-height: none; }
+.reveal .opening .subtitle {
+  position: absolute; left: 50px; top: 756px; width: 1230px;
+  font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 39px; color: #7f7f7f;
+}
 .reveal .opening .author {
-  position: absolute; left: 57px; top: 770px;
+  position: absolute; left: 57px; top: 855px;
   font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 45px;
 }
 .reveal .opening .date {

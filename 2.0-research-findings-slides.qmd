@@ -42,6 +42,8 @@ filters:
 
 ## **Research Findings** and How They May Inform **Practice** {.opening}
 
+[Responsible AI Course: Algorithmic Fairness]{.subtitle}
+
 ![](assets/slide-01-3.png){.absolute left=31 top=20 width=264 fig-alt="LMU München"}
 
 ![](assets/logo-mcml.png){.absolute left=657 top=73 width=220 fig-alt="MCML"}

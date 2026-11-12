@@ -93,7 +93,8 @@ $muted: #7f7f7f;
   position: absolute; left: 31px; bottom: 228px; width: 820px;
   font-size: 50px; margin: 0;
 }
-.reveal .opening .author { position: absolute; left: 38px; top: 512px; font-size: 30px; }
+.reveal .opening .subtitle { position: absolute; left: 33px; top: 504px; width: 820px; font-size: 26px; color: $muted; }
+.reveal .opening .author { position: absolute; left: 38px; top: 570px; font-size: 30px; }
 .reveal .opening .date { position: absolute; left: 0; width: 100%; top: 664px; text-align: center; font-size: 18px; color: $muted; }
 
 // Section dividers (`#` sections and `##` bridge slides); `.slides section`
