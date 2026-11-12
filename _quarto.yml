@@ -27,6 +27,7 @@ book:
         - ref: mcml
         - ref: uni-mannheim
   date: "2026-11-20"
+  repo-url: https://github.com/jansim/responsible-ai-course-fairness
   chapters:
     - index.qmd
     - 1.0-foundations-of-fairness.qmd
