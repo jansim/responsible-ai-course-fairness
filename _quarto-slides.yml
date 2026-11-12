@@ -17,6 +17,9 @@ project:
     - assets/icons/
     - assets/*.mp4
 
+# each deck lists only its own references (_quarto.yml adds all of them as nocite)
+nocite: ""
+
 format:
   revealjs:
     slide-number: true
