@@ -100,7 +100,7 @@ Correctional Offender Management Profiling for Alternative Sanctions (COMPAS)
 - Commercial software developed by Northpointe, not publicly disclosed
 - Can be used for targeting treatment programs, bail determinations, and in the course of sentencing decisions
 
-→ Test of accuracy and racial bias by [ProPublica](https://en.wikipedia.org/wiki/ProPublica) [@Angwin2016-yh]
+→ Test of accuracy and racial bias by [ProPublica](https://en.wikipedia.org/wiki/ProPublica) [@angwin2016machine]
 
 
 
@@ -181,7 +181,7 @@ Definitions of discrimination in legal domains [@Barocas2016-dw]
 
 **Protected Attributes in Anti-Discrimination Legislation**
 
-![Source: @simson2024](figures/lecture/protected.png){fig-align="center" width=80%}
+![Source: @simson2024lazy](figures/lecture/protected.png){fig-align="center" width=80%}
 
 
 # Protected Attributes
@@ -409,7 +409,7 @@ Given groups $g$ defined by protected attributes...
 
 # Fairness Trade-offs: Impossibility of Fairness
 
-- *"When the base rates differ by protected group and when there is not separation, one cannot have both conditional use accuracy equality and equality in the false negative and false positive rates"* [@Berk2021-zt, 20]
+- *"When the base rates differ by protected group and when there is not separation, one cannot have both conditional use accuracy equality and equality in the false negative and false positive rates"* [@berk2021fairness]
   - Equality of $FDR$, $FOR$ and $FNR$, $FPR$ across groups hardly possible in practice
   - Trade-off between Sufficiency and Equalized Odds
   
