@@ -14,5 +14,5 @@ Each part of the session has its own page on this website, and every page is als
 |---------------|----------------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | 09:00 – 10:15 | Foundations of Algorithmic Fairness                | [Intro](1.0-foundations-of-fairness.qmd) · [Slides](slides/1.0-foundations-of-fairness-slides.html) |
 | 10:15 – 10:30 | Break ☕                                            |                                                                                                       |
-| 10:30 – 11:00 | Research Findings and How They May Inform Practice | [Intro](2.0-research-findings.qmd) · [Slides](slides/2.0-research-findings-slides.html)             |
+| 10:30 – 11:00 | Research Findings and How They May Inform Practice | [Intro](2.0-research-findings.qmd) · [Slides](slides/2.0-research-findings-slides.html) · [PDF](pdf/2.0-research-findings-slides.pdf) |
 | 11:00 – 11:15 | Questions & Discussion                             |                                                                                                       |

@@ -2,7 +2,7 @@
 
 This session presents three research projects that re-examine the machine learning pipeline through the lens of algorithmic fairness: how datasets are (mis)used in fairness research, how many seemingly small design decisions shape a model's fairness, and how participatory input can help navigate these decisions.
 
-The slides are embedded below. Use the arrow keys to navigate, press `F` for fullscreen, or [open them in a new tab](slides/2.0-research-findings-slides.html){target="_blank"}.
+The slides are embedded below. Use the arrow keys to navigate, press `F` for fullscreen, [open them in a new tab](slides/2.0-research-findings-slides.html){target="_blank"}, or download them as a [PDF](pdf/2.0-research-findings-slides.pdf).
 
 ```{=html}
 <div class="slides-embed" style="position:relative;width:100%;aspect-ratio:16/9;margin-block:1rem;">

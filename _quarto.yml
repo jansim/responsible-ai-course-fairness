@@ -1,6 +1,9 @@
 project:
   type: book
   pre-render: assets/collect-citations.lua
+  resources:
+    # PDF exports of the slide decks
+    - pdf/*.pdf
 
 book:
   title: "Responsible AI Course: Algorithmic Fairness"
