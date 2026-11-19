@@ -136,9 +136,6 @@ Correctional Offender Management Profiling for Alternative Sanctions (COMPAS)
 # COMPAS V: Error rates {.smaller}
 
 
-![Source: modified from @James2013-uy, Ch. 4.4.3, Table 4.6, p. 148](figures/lecture/table_confusion_matrix_compas.png){fig-align="center" width=80%}
-
-
 $$
 \text{FPR} = \frac{\text{False Positives (FP)}}{\text{False Positives (FP)} + \text{True Negatives (TN)}}
 $$
@@ -157,13 +154,12 @@ $$
 
 # Fair ML I
 
-Fairness and Automated Decision-Making
+Fairness and Algorithmic Decision-Making
 
 - ML increasingly used for guiding high-stakes decisions
-- Automated decision-making increases effectiveness and consistency?
-    - Hope to protect against human subjectivity
-- Various forms of (data) biases can be fed into the system
-    - Models trained on biased data **learn to reproduce biases**!
+- Algorithmic decision-making promises to increase effectiveness and consistency
+- But various forms of (data) biases can be fed into the system
+    - Models trained on biased data **learn to reproduce biases**
 
 
 > "In the context of decision-making, fairness is the absence of any prejudice or favoritism toward an individual or a group based on their **inherent or acquired characteristics**." [@Mehrabi2021-ft]
@@ -187,6 +183,18 @@ Definitions of discrimination in legal domains [@Barocas2016-dw]
 
 ![Source: @simson2024](figures/lecture/protected.png){fig-align="center" width=80%}
 
+
+# Protected Attributes
+
+Deciding on and measuring protected attributes can be challenging 
+
+- Fair ML practice does not easily generalize to *EU/German context*
+    - e.g. focus on race rather than ethnicity
+
+- Important to consider *intersectionality*
+    - e.g. ethnicity $\times$ gender
+
+- Relevant attributes are *context-dependent*
 
 
 # Bias in Data I
@@ -428,12 +436,14 @@ Given groups $g$ defined by protected attributes...
    - Group-based fairness notions can be tricked
    - Protecting two groups separately can (still) concentrate positive outcomes in subgroups
 
+# Limitations of Group Fairness
+
+![Source: @kearns2018preventing](figures/lecture/gerrymandering.png){fig-align="center" width=50%}
 
 
 # Beyond Group Fairness
 
 1. **Group Fairness**: Treat different groups equally
-   - Weak fairness guarantees
 2. **Individual Fairness**: Give similar predictions to similar individuals
 3. **Multi-group Fairness**: Extend group fairness to large collections of subgroups
 
