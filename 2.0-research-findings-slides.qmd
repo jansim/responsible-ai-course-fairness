@@ -528,7 +528,7 @@ Explain delta = max – min for any given model
 
 ## **Study 2:** Results
 
-<video class="absolute" data-autoplay muted playsinline src="assets/interactive-multiverse.mp4" style="left:0;top:145px;width:1280px"></video>
+<a href="https://reliable-ai.github.io/fairml-multiverse/" target="_blank"><video class="absolute" data-autoplay muted playsinline src="assets/interactive-multiverse.mp4" style="left:0;top:145px;width:1280px"></video></a>
 
 ## Interactive Analysis {visibility="hidden"}
 
@@ -706,6 +706,8 @@ Jan Simson, Fiona Draxler, Samuel Mehr, Christoph Kern
 ::: {.notes}
 We saw effective techniques of how the machine learning pipeline can be re-evaluated
 :::
+
+# Questions & Discussion:  {.section-slide}
 
 ## **Outlook**
 
