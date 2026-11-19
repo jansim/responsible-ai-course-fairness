@@ -707,7 +707,7 @@ Jan Simson, Fiona Draxler, Samuel Mehr, Christoph Kern
 We saw effective techniques of how the machine learning pipeline can be re-evaluated
 :::
 
-# Questions & Discussion {.section-slide}
+# **Questions & Discussion** {.section-slide}
 
 ## **Outlook**
 
