@@ -1,6 +1,6 @@
 # Foundations of Algorithmic Fairness {#sec-foundations-of-fairness}
 
-This session introduces the core concepts of algorithmic fairness: how automated decision-making (ADM) systems can disadvantage groups of people, where bias in data comes from, the main formal notions of fairness and the trade-offs between them, and approaches that go beyond group fairness. It closes with a hands-on lab in R using MCBoost.
+This session introduces the core concepts of algorithmic fairness: how automated decision-making (ADM) systems can disadvantage groups of people, where bias in data comes from, the main formal notions of fairness and the trade-offs between them, and approaches that go beyond group fairness.
 
 The slides are embedded below. Use the arrow keys to navigate, press `F` for fullscreen, or [open them in a new tab](slides/1.0-foundations-of-fairness-slides.html){target="_blank"}.
 
@@ -19,7 +19,6 @@ The slides are embedded below. Use the arrow keys to navigate, press `F` for ful
   - (Group) fairness notions and fairness trade-offs
   - Individual fairness
   - Multi-group fairness
-- Lab in R: MCBoost application example
 
 ## Resources
 
