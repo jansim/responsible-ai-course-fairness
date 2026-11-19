@@ -17,6 +17,7 @@ format:
     hash: true
     html-math-method: mathml
     code-copy: false
+    pdf-max-pages-per-slide: 1
     include-after-body:
       # let auto-animate also interpolate the progressive figure crops
       text: |

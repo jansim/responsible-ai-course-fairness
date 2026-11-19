@@ -35,6 +35,11 @@ $muted: #7f7f7f;
 }
 // Quarto marks `#` slides as `.center`; keep them on the top-anchored grid
 .reveal .slides section.slide.center { top: 0 !important; }
+// PDF export (`?print-pdf`): reveal.js's print CSS forces `padding: 0
+// !important` on every section; restore the grid padding
+html.reveal-print .reveal .slides section.slide { padding: 72px 88px 0 !important; }
+// ... and show fragments in their final state without mid-transition frames
+html.reveal-print .reveal .slides section .fragment { transition: none !important; }
 
 .reveal h1, .reveal h2 { margin: 0 0 36px; }
 .reveal h1 { font-size: $presentation-h2-font-size; }
