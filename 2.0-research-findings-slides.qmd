@@ -106,7 +106,7 @@ There's more, both in depth i.e. you could zoom in and outside of this e.g. data
 Should we re-evaluate this pipeline and if so – how?
 :::
 
-## Contributions {auto-animate=true}
+## Papers {auto-animate=true}
 
 ::: {.contrib-list}
 - Lazy Data Practices
@@ -133,7 +133,7 @@ Should we re-evaluate this pipeline and if so – how?
 ![](assets/slide-08-4.png){.absolute left=1048 top=67 width=174 fig-alt="FAccT logo"}
 
 ::: {.byline}
-**Jan Simson**, Alessandro Fabris, Christoph Kern
+Jan Simson, Alessandro Fabris, Christoph Kern
 
 [Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT '24<br>https://doi.org/10.1145/3630106.3658931]{.venue}
 :::
@@ -350,7 +350,7 @@ These are hard (!) and some may require also changes on the reviewer side, but w
 ![](assets/slide-23-4.png){.absolute left=1048 top=67 width=174 fig-alt="FAccT logo"}
 
 ::: {.byline}
-**Jan Simson**, Florian Pfisterer, Christoph Kern
+Jan Simson, Florian Pfisterer, Christoph Kern
 
 [Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT '24<br>https://doi.org/10.1145/3630106.3658974]{.venue}
 :::
@@ -559,7 +559,7 @@ Given computational constraints, potentially problematic decisions and opportuni
 ![](assets/slide-40-6.png){.absolute left=1030 top=47 width=200 fig-alt="CHI logo"}
 
 ::: {.byline}
-**Jan Simson**, Fiona Draxler, Samuel Mehr, Christoph Kern
+Jan Simson, Fiona Draxler, Samuel Mehr, Christoph Kern
 
 [Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, CHI '25<br>https://doi.org/10.1145/3706598.3713482]{.venue}
 :::
